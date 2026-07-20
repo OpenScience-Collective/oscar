@@ -61,6 +61,19 @@ All of it transparent, public, and auditable. Files in [`after/`](after/):
 - **Command-line tool** ([CLI guide](../../docs/archetypes/cli.md)): `nemar-cli` is how the data is really fetched;
   its commands belong in the card and the `AGENTS.md`.
 
+## Automating it
+
+Generate the card, do not hand-write it. The [`after/ci/`](after/ci/) folder has a working sample:
+
+- [`generate-jsonld.ts`](after/ci/generate-jsonld.ts): turns a NEMAR metadata record into a
+  schema.org `Dataset` JSON-LD plus a compact `summary.json`. Run it with
+  `bun run generate-jsonld.ts nm000103 --metadata <path> --out <dir>`.
+- [`new-dataset-jsonld.yml`](after/ci/new-dataset-jsonld.yml): a GitHub Actions workflow that runs
+  every four hours (the cadence NEMAR already uses to check for new datasets), detects new or
+  changed datasets, and regenerates the JSON-LD and summary for each.
+
+Tracking issue for the production implementation: nemarOrg/website#156.
+
 ## Note
 
 This example doubles as concrete input for the current nemar.org redesign (`nemarOrg/website`),

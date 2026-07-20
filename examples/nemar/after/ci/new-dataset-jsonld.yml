@@ -1,0 +1,50 @@
+# OSCAR NEMAR example: sample GitHub Actions workflow.
+#
+# Runs every four hours (the cadence NEMAR already uses to check for new datasets),
+# detects new or changed datasets, and regenerates a schema.org Dataset JSON-LD plus
+# a summary JSON for each. Adapt the "detect" and "publish" steps to your infrastructure
+# (Cloudflare D1, the metadata repo, S3 at data.nemar.org, or the site build).
+
+name: Generate dataset JSON-LD
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"   # every four hours
+  workflow_dispatch: {}      # allow manual runs
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Detect datasets needing (re)generation
+        id: detect
+        run: |
+          # Replace with your real check: query D1 or list data.nemar.org for
+          # dataset ids that are new or changed since the last run.
+          # Emit a JSON array of ids on the "ids" output.
+          echo 'ids=["nm000103"]' >> "$GITHUB_OUTPUT"
+
+      - name: Generate JSON-LD and summary per dataset
+        run: |
+          for id in $(echo '${{ steps.detect.outputs.ids }}' | jq -r '.[]'); do
+            bun run ci/generate-jsonld.ts "$id" \
+              --metadata "metadata/${id}.json" \
+              --out "public/datasets/${id}"
+          done
+
+      - name: Publish
+        run: |
+          # Replace with your real publish step, for example:
+          #   - commit the generated files so the site build server-renders them, or
+          #   - upload dataset.jsonld and summary.json to data.nemar.org/<id>/latest/
+          #     (S3) and invalidate the cache.
+          echo "Publish dataset.jsonld and summary.json for each id"
