@@ -1,0 +1,22 @@
+{
+  "_comment": "OSCAR example: schema.org SoftwareApplication for EEGLAB. Server-render this inside a <script type=\"application/ld+json\"> tag on eeglab.org so a plain HTTP request returns it. Remove this _comment before shipping.",
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EEGLAB",
+  "applicationCategory": "ScientificApplication",
+  "operatingSystem": "MATLAB (Windows, macOS, Linux)",
+  "url": "https://eeglab.org",
+  "downloadUrl": "https://github.com/sccn/eeglab",
+  "description": "Open-source MATLAB toolbox for processing continuous and event-related EEG, MEG, and other electrophysiological data, including filtering, artifact rejection, independent component analysis, and time-frequency analysis.",
+  "author": {
+    "@type": "Organization",
+    "name": "Swartz Center for Computational Neuroscience (SCCN), UC San Diego",
+    "url": "https://sccn.ucsd.edu"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "EEG, MEG, ICA, MATLAB, electrophysiology, neuroscience, BIDS"
+}

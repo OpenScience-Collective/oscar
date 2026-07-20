@@ -1,0 +1,26 @@
+# EEGLAB
+
+> EEGLAB is an open-source MATLAB toolbox from the Swartz Center for Computational Neuroscience
+> (SCCN) for processing continuous and event-related EEG, MEG, and other electrophysiological
+> data: filtering, artifact rejection, independent component analysis (ICA), time-frequency
+> analysis, and group study. It has a graphical interface and a scripting interface.
+
+## Start here
+- [About EEGLAB](https://eeglab.org): what it is and what it does
+- [Tutorials](https://eeglab.org/tutorials): step-by-step guides
+- [Download and install](https://eeglab.org/download): get EEGLAB
+- [Source code](https://github.com/sccn/eeglab): the MATLAB toolbox
+
+## Use it
+- [Scripting](https://eeglab.org/tutorials): run EEGLAB from scripts, headless with `eeglab nogui`
+- Function manifest: a machine-readable catalog of the core functions accompanies this site (function-manifest.json)
+- Data model: datasets are the EEG structure, stored as `.set` (metadata) plus `.fdt` (data); validate with `eeg_checkset`
+
+## In the ecosystem
+- [BIDS](https://bids.neuroimaging.io): organize datasets (the `bids-matlab-tools` plugin imports and exports BIDS)
+- [HED](https://www.hedtags.org): annotate events
+- [NEMAR](https://nemar.org) and [OpenNeuro](https://openneuro.org): datasets to analyze
+
+## Notes for agents
+- EEGLAB is MATLAB; there is no package registry to enumerate. Use the function manifest, not guesswork.
+- Prefer the `pop_` functions; always run `eeg_checkset(EEG)` after modifying a dataset.

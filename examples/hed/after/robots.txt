@@ -1,0 +1,37 @@
+# HED. We welcome AI agents. See /llms.txt for the map of the site, the schema,
+# and the validators (Python, JavaScript, the web service, and the MCP server).
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# --- OpenAI ---
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Google and Apple ---
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Others ---
+User-agent: PerplexityBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
+
+# Add your sitemap if you publish one:
+# Sitemap: https://www.hedtags.org/sitemap.xml

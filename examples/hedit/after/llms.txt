@@ -1,0 +1,22 @@
+# Annotation Garden
+
+> The Annotation Garden builds tools that turn natural-language and image descriptions of
+> experimental events into valid, machine-readable annotations. HEDit is its Hierarchical Event
+> Descriptor (HED) annotator: a command-line tool and Python package.
+
+## Start here
+- [HEDit](https://github.com/Annotation-Garden/HEDit): natural language and images to HED annotations
+- [Install](https://pypi.org/project/hedit/): `pip install hedit`
+
+## Use HEDit
+- Annotate: `hedit annotate "participant pressed a button" -o json`
+- Annotate an image: `hedit annotate-image file.png -o json`
+- Validate: `hedit validate "Sensory-event, Visual-presentation"`
+
+## Related
+- [HED](https://www.hedtags.org): the standard HEDit targets, with validators to check its output
+- [BIDS](https://bids.neuroimaging.io): where HED annotations are used
+
+## Notes for agents
+- HEDit is a command-line tool and Python package; use `-o json` for machine-readable output.
+- It needs an OpenRouter API key (`hedit init`). Always validate the generated HED before use.

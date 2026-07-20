@@ -1,0 +1,23 @@
+{
+  "_comment": "OSCAR example: schema.org SoftwareApplication for the HED online tools. Server-render this inside a <script type=\"application/ld+json\"> tag on the online-tools page so a plain HTTP request returns it. Remove this _comment before shipping.",
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "HED Online Tools",
+  "alternateName": "hedtools.org",
+  "applicationCategory": "ScientificApplication",
+  "operatingSystem": "Web",
+  "url": "https://hedtools.org/hed",
+  "description": "Browser tools and a JSON web service to validate, assemble, and remodel HED (Hierarchical Event Descriptor) annotations for events in Brain Imaging Data Structure (BIDS) datasets.",
+  "softwareHelp": "https://www.hed-resources.org",
+  "author": {
+    "@type": "Organization",
+    "name": "HED Standard",
+    "url": "https://www.hedtags.org"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "HED, event annotation, BIDS, validation, neuroscience, schema"
+}

@@ -1,0 +1,41 @@
+{
+  "_comment": "OSCAR example: a machine-readable catalog of key EEGLAB functions, the bolt-on the library archetype recommends for MATLAB toolboxes (which have no package registry or docstring standard). Generate this from the functions' 'help' blocks so it does not drift, and serve it from eeglab.org. This is a representative subset, not the full API.",
+  "tool": "EEGLAB",
+  "language": "MATLAB",
+  "url": "https://eeglab.org",
+  "repository": "https://github.com/sccn/eeglab",
+  "dataStructure": "EEG (the EEGLAB structure); datasets are stored as .set (metadata) plus .fdt (data)",
+  "runHeadless": "eeglab nogui",
+  "functions": [
+    {
+      "name": "pop_loadset",
+      "summary": "Load an EEGLAB dataset from a .set file.",
+      "signature": "EEG = pop_loadset('filename', file, 'filepath', dir)"
+    },
+    {
+      "name": "pop_eegfiltnew",
+      "summary": "Apply a finite impulse response (FIR) high-pass, low-pass, or band-pass filter.",
+      "signature": "EEG = pop_eegfiltnew(EEG, 'locutoff', lo, 'hicutoff', hi)"
+    },
+    {
+      "name": "pop_runica",
+      "summary": "Run independent component analysis (ICA) to separate sources.",
+      "signature": "EEG = pop_runica(EEG, 'icatype', 'runica')"
+    },
+    {
+      "name": "pop_epoch",
+      "summary": "Extract epochs time-locked to events of the given types.",
+      "signature": "EEG = pop_epoch(EEG, {eventtypes}, [tmin tmax])"
+    },
+    {
+      "name": "eeg_checkset",
+      "summary": "Validate and repair the consistency of an EEG structure.",
+      "signature": "EEG = eeg_checkset(EEG)"
+    },
+    {
+      "name": "pop_saveset",
+      "summary": "Save a dataset to a .set file.",
+      "signature": "EEG = pop_saveset(EEG, 'filename', file, 'filepath', dir)"
+    }
+  ]
+}
