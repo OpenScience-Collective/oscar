@@ -9,7 +9,8 @@ Make your open-science tools legible to AI agents, transparently.</p>
 
 ---
 
-OSCAR is a guide and a drop-in toolkit that helps any open-science project answer two questions:
+OSCAR is the best practices, rules, and tools that make an open-science project ready for AI agents.
+It helps any maintainer answer two questions:
 
 1. **How do agents find out my tool exists,** and what it does?
 2. **How do agents use my tool to the fullest** once they have found it?
