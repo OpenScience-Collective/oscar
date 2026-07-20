@@ -32,7 +32,9 @@ Give it a clean, curated path instead.
 4. **Offer markdown mirrors.**
    Serve a clean `.md` for each page (a `.md` URL or `Accept: text/markdown` negotiation),
    so agents can skip the HTML entirely.
-   Many static-site generators can emit these at build time.
+   The saving is large: one field test cut a docs page from 615 KB to 2.3 KB.
+   On a static site, a `.md` URL variant per page (the Stripe style) is simpler than content negotiation,
+   and most static-site generators can emit it at build time.
 
 5. **Keep `sitemap.xml` honest** with real `<lastmod>` dates so agents know what changed.
 

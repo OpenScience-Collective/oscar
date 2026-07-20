@@ -34,13 +34,20 @@ Do not use any of the following to steer agents:
 - instructions placed only in HTML comments, `alt` text, or metadata that no reader sees,
 - content served to agents that differs from content served to browsers (cloaking).
 
-These techniques are **indirect prompt injection**.
-Security researchers document them as an attack vector,
+These techniques are **indirect prompt injection**,
+ranked first in the OWASP Top 10 for Large Language Model Applications (LLM01).
+Security researchers document them as an attack vector (Palo Alto Unit 42, Zscaler ThreatLabz),
 agent vendors are building detections against them,
 and a site caught doing this can be flagged and distrusted.
 An open-science project has more to lose here than anyone.
 
-OSCAR documents these patterns in exactly one place: this list, as things to never do.
+There is a legitimate way to steer an agent: do it in the open.
+Stripe's public `llms.txt`, for example, carries a visible, labeled
+"Instructions for Large Language Model Agents" section.
+That is fair game, because a human can open the same file and read the same guidance.
+If it is not fair to show a human, it is not fair to show an agent.
+
+OSCAR documents the hidden-instruction patterns in exactly one place: this list, as things to never do.
 
 ## 5. Consent and control
 

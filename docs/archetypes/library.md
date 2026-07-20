@@ -33,6 +33,10 @@ A precisely documented public surface is the difference between working code and
 
 5. **Add an `AGENTS.md`** covering install, import, the handful of entry-point functions,
    and the conventions a newcomer always gets wrong.
+   This is often the single highest-value step for a library,
+   because agents usually meet a library by reading source in an editor, not by visiting a website.
+   Keep your package metadata accurate too (Python `pyproject.toml`, R `DESCRIPTION`, MATLAB `info.xml`);
+   it is the library-world equivalent of a machine-readable card.
 
 6. **Optional: an MCP server** exposing your highest-value operations as callable tools,
    so an agent can run an analysis step without generating and executing arbitrary code.

@@ -1,26 +1,42 @@
 # OSCAR starter: robots.txt
 # Explicitly welcome the AI agents you want to use your content.
-# Set "Disallow: /" under any agent you do not want, or remove its block.
-# This is the honest, visible way to state consent.
+# Two kinds of agent matter, and you may want to treat them differently:
+#   - "training" crawlers, which may use your content to train models
+#   - "search / user" fetchers, which retrieve a page to answer a live question
+# For most open-science content you can Allow all of them.
+# For licensed or restricted research DATA, consider allowing the search/user
+# fetchers while disallowing the training crawlers (set "Disallow: /" to block).
+# Token references:
+#   Anthropic: https://support.claude.com/en/articles/8896518  (verify: https://claude.com/crawling/bots.json)
+#   OpenAI:    https://platform.openai.com/docs/bots
 
+# --- Anthropic ---
+# ClaudeBot = training, Claude-SearchBot = search index, Claude-User = user-initiated fetch
 User-agent: ClaudeBot
 Allow: /
-
+User-agent: Claude-SearchBot
+Allow: /
 User-agent: Claude-User
 Allow: /
 
+# --- OpenAI ---
+# GPTBot = training, OAI-SearchBot = ChatGPT Search index, ChatGPT-User = user-triggered fetch
 User-agent: GPTBot
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
+User-agent: ChatGPT-User
+Allow: /
 
+# --- Google and Apple (training opt-in/out, separate from classic search crawlers) ---
 User-agent: Google-Extended
 Allow: /
-
-User-agent: PerplexityBot
+User-agent: Applebot-Extended
 Allow: /
 
+# --- Others ---
+User-agent: PerplexityBot
+Allow: /
 User-agent: CCBot
 Allow: /
 

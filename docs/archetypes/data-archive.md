@@ -17,6 +17,9 @@ Rich, standard, machine-readable metadata per dataset is what makes an archive n
 1. **Emit schema.org `Dataset` JSON-LD** on every dataset page:
    name, description, identifier (a DOI where possible), license, creators, distribution URLs, variables.
    This is what dataset search engines index.
+   Google Dataset Search has indexed this markup since 2018, so it is the most mature agent channel of all.
+   For a whole packaged research object, RO-Crate (`ro-crate-metadata.json`) extends the same JSON-LD,
+   a natural fit for Brain Imaging Data Structure (BIDS) datasets.
 
 2. **Publish a machine-readable catalog** of all datasets:
    a DCAT catalog or a simple JSON index, plus a sitemap that lists every dataset page with `<lastmod>`.
@@ -45,3 +48,5 @@ schema.org `Dataset` on each dataset page, plus a machine-readable catalog of al
 - Do not rely on a human-readable table as the only catalog; provide the structured version too.
 - Do not omit the license; an agent that cannot confirm terms should not, and may not, use the data.
 - Do not let free-text dataset descriptions carry instructions into what you expose to agents.
+- For licensed or restricted data, do not use a blanket crawler policy; in `robots.txt`,
+  consider allowing search and user fetchers while disallowing training crawlers.

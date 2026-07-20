@@ -27,6 +27,8 @@ and the app becomes something an agent can actually operate.
 3. **Expose the core actions via a Model Context Protocol (MCP) server.**
    For HEDit, that might be "suggest HED tags for this description" or "validate this annotation."
    MCP turns a click-through workflow into a callable capability.
+   Ship both: OpenAPI for conventional, programmatic integration, and MCP for native agent tool-calling.
+   HuggingFace, for instance, runs an official MCP server at huggingface.co/mcp rather than relying on a static file.
 
 4. **State auth and limits plainly** in the docs:
    how to get a key, what the rate limits are, what errors look like.

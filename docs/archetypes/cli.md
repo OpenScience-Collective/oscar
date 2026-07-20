@@ -24,6 +24,7 @@ If it is thin or inconsistent, the agent guesses and fails.
    A stable `--version` and, ideally, a structured dump such as `mytool --help=json`
    or a documented `mytool schema` command that prints the command tree as JSON.
    This lets an agent enumerate capabilities without scraping prose.
+   The tools agents already lean on set the precedent: `gh`, `docker`, and `kubectl` all offer `--output json`.
 
 3. **Add an `AGENTS.md` at the repo root.**
    Install command, the three or four commands that matter most,
