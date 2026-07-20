@@ -24,6 +24,12 @@ Archetypes: **data archive**, **command-line tool**, and **website**.
 Shows: schema.org `Dataset` per dataset, a machine-readable catalog,
 a clean `nemar-cli --help` with a JSON schema form, and a top-level `llms.txt`.
 
+## Candidates as the landscape grows
+
+We do not try to cover everything.
+As OSCAR matures, likely additions include MNE-Python (library),
+OpenNeuro and DANDI (data archives), and Neurodata Without Borders (NWB) as a standard.
+
 ---
 
 Each example will land as its own directory here with:

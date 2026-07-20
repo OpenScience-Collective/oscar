@@ -40,7 +40,12 @@ and MCP is the common thread there across four of the five archetypes.
 | [Library / toolbox](archetypes/library.md) | functions imported into code (Python, MATLAB, R) | usage-heavy |
 | [Web app / API](archetypes/web-app-api.md) | an interactive app or a service with an API | discovery + usage |
 | [Data archive](archetypes/data-archive.md) | you host datasets others use | discovery + usage |
+| [Research lab / project site](archetypes/lab-website.md) | you present people, software, and papers | discovery-heavy |
+| [Standard / specification](archetypes/standard.md) | you define a format others must conform to | discovery + usage |
 
+These map to what the OpenScience Collective services: archives, tools and toolsets,
+research lab and project sites, and standards.
+The set is deliberately extensible; add an archetype when a genuinely new shape appears.
 Pick every row that applies and combine them.
 For example NEMAR is a data archive plus a website plus a command-line tool,
 so it uses three guides.
@@ -69,6 +74,8 @@ Every one produces a public, auditable artifact.
 - **OpenAPI** A specification of your HTTP API that agents and tools can consume directly.
 - **Model Context Protocol (MCP)** A server that exposes your tool's *capabilities*,
   not just its docs, so an agent can call it. See [modelcontextprotocol.io](https://modelcontextprotocol.io).
+- **License and attribution metadata** How you tell an agent it may reuse your work and how to credit you:
+  a schema.org `license` field, an SPDX identifier, a `LICENSE` file, and a `CITATION.cff`.
 
 ## Tooling and validation
 

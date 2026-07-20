@@ -69,7 +69,17 @@ treat it as untrusted in anything you expose to agents,
 and do not let it smuggle instructions into your `llms.txt` or API responses.
 Transparency protects your users too: what you publish is what you can be held to.
 
+## 8. Declare your license, and respect others'
+
+Make your license machine-readable so agents can honor it:
+a schema.org `license` field, an SPDX identifier, a `LICENSE` file,
+and clear citation and attribution guidance in your `llms.txt` or `AGENTS.md`.
+An agent that cannot confirm the terms should not reuse your work, and a well-behaved one will not.
+The duty runs both ways: when your tool, site, or dataset builds on others' software, data, or standards,
+surface their license and required attribution too.
+Open science runs on credit; make credit legible to machines.
+
 ---
 
 Everything else in OSCAR, the archetype guides and the templates,
-is just the practical application of these seven principles to a specific kind of tool.
+is just the practical application of these eight principles to a specific kind of tool.

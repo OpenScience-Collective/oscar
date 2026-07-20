@@ -58,8 +58,13 @@ Most projects are a combination of two or three.
 | Command-line tool | `nemar-cli` | machine-readable `--help`, `AGENTS.md`, examples cookbook, optional MCP server |
 | Library / toolbox | EEGLAB (MATLAB) | docstrings, typed signatures, docs `llms.txt`, MCP server, worked notebooks |
 | Web app / API | HEDit, OSA | OpenAPI spec, MCP server, JSON-LD `SoftwareApplication`, clear auth and limits |
-| Data archive | NEMAR | schema.org `Dataset`, machine-readable catalog, per-dataset cards, API |
+| Data archive | NEMAR | schema.org `Dataset`, machine-readable catalog, query + metadata + bulk download |
+| Research lab / project site | a lab or project website | JSON-LD `Organization`/`Person`/`SoftwareSourceCode`, persistent IDs (ORCID, ROR, DOI) |
+| Standard / specification | BIDS, HED | machine-readable schema, a callable validator, versioned citable spec |
 
+OSCAR curates instructions for the kinds of project the OpenScience Collective services:
+data archives, tools and toolsets, research lab and project sites, and standards.
+The set is meant to be extensible; new archetypes and worked examples are added as the landscape grows.
 Full guides live in [`docs/archetypes/`](docs/archetypes/).
 
 ## Layout

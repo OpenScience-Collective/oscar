@@ -12,6 +12,20 @@ and **usage** (agents fetch and understand it correctly).
 A dataset is only useful to an agent if the agent can find it and trust its structure.
 Rich, standard, machine-readable metadata per dataset is what makes an archive navigable at scale.
 
+## The three questions an agent asks
+
+An agent approaching your archive needs three things answered fast:
+
+1. **How do I search or query?** A documented query interface or API with examples,
+   so an agent finds the right dataset without scraping listing pages.
+2. **How do I get the metadata?** A direct, machine-readable way to fetch a dataset's metadata
+   (JSON, not only an HTML page), so an agent can judge fit before downloading gigabytes.
+3. **How do I download the data efficiently?** The exact endpoint or command for bulk and
+   programmatic access (an API, an object-store bucket, a command-line tool), not just a browser button.
+
+Answer these three well and you save every agent, and every human, an enormous amount of time.
+The techniques below are how you answer them.
+
 ## Do these, in order of value
 
 1. **Emit schema.org `Dataset` JSON-LD** on every dataset page:

@@ -13,6 +13,7 @@ Aim for "yes" or "not applicable," never "hidden."
 - [ ] `robots.txt` states which AI user-agents may use the content.
 - [ ] Agent-facing files are generated from source at build time, not hand-maintained.
 - [ ] User-generated content is treated as untrusted in anything exposed to agents.
+- [ ] Your license is machine-readable (schema.org `license`, SPDX, `LICENSE`, `CITATION.cff`), with attribution guidance.
 
 ## Website / docs site
 
@@ -48,5 +49,21 @@ Aim for "yes" or "not applicable," never "hidden."
 
 - [ ] Each dataset page emits schema.org `Dataset` JSON-LD with a license and identifier.
 - [ ] A machine-readable catalog of all datasets exists.
-- [ ] The query and download API is documented with examples.
+- [ ] An agent can search or query programmatically (documented API with examples).
+- [ ] Metadata is fetchable in machine-readable form without downloading the data.
+- [ ] Bulk and programmatic data download is documented (API, bucket, or CLI), not just a browser button.
 - [ ] A top-level `llms.txt` points at the catalog and search, not every dataset.
+
+## Research lab / project site
+
+- [ ] JSON-LD marks up the lab, its people, software, datasets, and papers.
+- [ ] Persistent identifiers are exposed (ORCID, ROR, DOI).
+- [ ] A canonical index links each output to its own home.
+- [ ] `llms.txt` maps people, software, datasets, and key papers.
+
+## Standard / specification
+
+- [ ] The specification is published as a machine-readable schema.
+- [ ] A validator exists and is callable (command-line, library, or API/MCP).
+- [ ] The specification is versioned and citable.
+- [ ] Conformant examples (and a few labeled non-conformant ones) are provided.

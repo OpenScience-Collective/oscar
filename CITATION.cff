@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use OSCAR, please cite it as below."
+title: "OSCAR: Open Science Collective Agent Readiness"
+abstract: >-
+  Best practices, rules, and tools to make open-science tools discoverable by
+  AI agents and usable to the fullest, transparently.
+type: software
+authors:
+  - name: "OpenScience Collective"
+    website: "https://osc.earth"
+url: "https://github.com/OpenScience-Collective/oscar"
+repository-code: "https://github.com/OpenScience-Collective/oscar"
+license: CC-BY-4.0
+keywords:
+  - open science
+  - AI agents
+  - agent readiness
+  - llms.txt
+  - Model Context Protocol
