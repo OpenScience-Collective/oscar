@@ -1,0 +1,23 @@
+{
+  "_comment": "OSCAR starter: JSON-LD SoftwareApplication. Inline this in a <script type=\"application/ld+json\"> tag in your page <head>. Remove this _comment field before shipping.",
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Your Tool",
+  "alternateName": "YT",
+  "applicationCategory": "ScientificApplication",
+  "operatingSystem": "Web",
+  "url": "https://your-tool.org",
+  "downloadUrl": "https://github.com/your-org/your-tool",
+  "description": "One sentence: what the tool does and for whom.",
+  "keywords": "open science, neuroscience, EEG, add, your, keywords",
+  "author": {
+    "@type": "Organization",
+    "name": "Your Organization",
+    "url": "https://your-org.org"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}

@@ -1,0 +1,31 @@
+# OSCAR starter: robots.txt
+# Explicitly welcome the AI agents you want to use your content.
+# Set "Disallow: /" under any agent you do not want, or remove its block.
+# This is the honest, visible way to state consent.
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
+
+Sitemap: https://your-tool.org/sitemap.xml

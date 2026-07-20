@@ -1,0 +1,28 @@
+<!--
+  OSCAR starter: /llms.txt   (spec: https://llmstxt.org)
+  Serve this at the root of your site, for example https://your-tool.org/llms.txt
+  Rules:
+    - Curate. Link only your genuinely important pages, not every URL.
+    - One line per link, describing what the reader will find.
+    - Regenerate from your content source at build time so it never drifts.
+    - Everything here must match what humans see. No hidden or extra claims.
+  Delete this comment before shipping.
+-->
+# Your Project Name
+
+> One or two plain sentences: what this tool is, and who it is for.
+
+## Start here
+- [Docs](https://your-tool.org/docs): what the documentation covers
+- [Quickstart](https://your-tool.org/start): running in five minutes
+- [Demo](https://your-tool.org/demo): try it live
+
+## Reference
+- [API reference](https://your-tool.org/api): endpoints, parameters, schemas
+- [Examples](https://your-tool.org/examples): worked, copyable tasks
+
+## About
+- [About](https://your-tool.org/about): the project, its people, how to cite it
+
+## Optional
+- [Changelog](https://your-tool.org/changelog): what changed and when
