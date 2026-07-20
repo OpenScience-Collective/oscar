@@ -39,6 +39,15 @@ and the app becomes something an agent can actually operate.
 
 6. **Return structured, well-typed responses** with errors that explain themselves.
 
+## Precedent and specifics
+
+- **A model to copy:** DANDI serves an OpenAPI/Swagger spec at a stable path
+  plus a machine `/info` endpoint returning service URLs and versions as plain JSON.
+  Offer an equivalent `/info` or `/.well-known/` descriptor.
+- **GraphQL** (as OpenNeuro uses) is fine, but enable introspection and document the endpoint;
+  the API, not a client-rendered page, is then the real agent surface.
+- **Signpost API responses too,** with `Link` headers, not only your HTML pages.
+
 ## Minimum viable setup
 
 An OpenAPI spec plus JSON-LD `SoftwareApplication` on the landing page.

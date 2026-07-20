@@ -25,9 +25,17 @@ Give it a clean, curated path instead.
    Name the AI user-agents explicitly so there is no ambiguity.
    See [`templates/robots.txt`](../../templates/robots.txt).
 
-3. **Add JSON-LD to every page head.**
+3. **Add JSON-LD to every page head, server-rendered.**
    At minimum `Organization` and, for a tool, `SoftwareApplication`.
    This is the machine-readable channel search engines and agents already trust.
+   Render it in the HTML your server returns, not by client-side script:
+   an agent doing a plain request must see it.
+
+4. **Signpost your key relations.**
+   Add typed `Link` relations, as HTTP headers or HTML `<link>` tags,
+   for how to cite the page (`cite-as`), its author, and its license: the FAIR Signposting Profile.
+   An agent then gets citation, authorship, and license from a single HEAD request, no scraping.
+   This is widely adopted across scholarly repositories (Zenodo, Dataverse, DSpace).
 
 4. **Offer markdown mirrors.**
    Serve a clean `.md` for each page (a `.md` URL or `Accept: text/markdown` negotiation),
@@ -56,3 +64,5 @@ A hand-edited `llms.txt` drifts out of date within a release or two.
 - Do not dump every URL into `llms.txt`; curate.
 - Do not let `llms.txt` say something the page does not.
 - Do not hide the link or the file. If it is for agents, it is visible to people.
+- Do not client-render your structured data; an agent doing a plain HTTP GET then sees an empty shell.
+  Some major data archives regressed exactly this way.

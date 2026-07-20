@@ -3,9 +3,9 @@
 How to make an open-science tool ready for AI agents,
 so agents can both **discover** it and **use it to the fullest**, transparently.
 
-Start with the [principles](principles.md).
-Then read the guide(s) for your archetype.
-Finish with the [checklist](checklist.md).
+New here? Read the [grounding](grounding.md) first,
+why agent-readiness is the FAIR principles made practical, not a passing trend.
+Then the [principles](principles.md), the guide for your archetype, and the [checklist](checklist.md).
 
 ## Two jobs
 
@@ -76,6 +76,13 @@ Every one produces a public, auditable artifact.
   not just its docs, so an agent can call it. See [modelcontextprotocol.io](https://modelcontextprotocol.io).
 - **License and attribution metadata** How you tell an agent it may reuse your work and how to credit you:
   a schema.org `license` field, an SPDX identifier, a `LICENSE` file, and a `CITATION.cff`.
+- **Signposting** Typed HTTP `Link` headers and HTML `<link>` relations
+  (`cite-as`, `author`, `license`, `type`, `describedby`, `item`) that let an agent
+  navigate a scholarly resource from a plain HEAD request, no scraping.
+  The FAIR Signposting Profile; adopted by Zenodo, Dataverse, and DSpace. See [signposting.org](https://signposting.org).
+- **Bioschemas** schema.org profiles refined for science
+  (`Dataset`, `ComputationalTool`, `FormalParameter`, `Person`, `TrainingMaterial`),
+  each with explicit Minimum, Recommended, and Optional fields. See [bioschemas.org](https://bioschemas.org).
 
 ## Tooling and validation
 

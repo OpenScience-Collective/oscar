@@ -40,6 +40,13 @@ If those entities are only prose and PDFs, the agent cannot follow the graph.
 Say how to cite the lab's work and what license covers the site content and each output.
 Attribution is the currency of open science; make it legible to machines.
 
+## Precedent and specifics
+
+- **Signpost authorship and citations:** `rel="author"` to each member's ORCID,
+  and `rel="cite-as"` to a DOI on every publication listing.
+- **Use the Bioschemas `Person` and `TrainingMaterial` profiles,** and mark up the lab's outputs
+  as a small `DataCatalog` of datasets, tools, and software rather than plain prose links.
+
 ## Minimum viable setup
 
 JSON-LD for the lab and its outputs, plus an `llms.txt` that maps them.

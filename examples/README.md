@@ -27,8 +27,13 @@ a clean `nemar-cli --help` with a JSON schema form, and a top-level `llms.txt`.
 ## Candidates as the landscape grows
 
 We do not try to cover everything.
-As OSCAR matures, likely additions include MNE-Python (library),
-OpenNeuro and DANDI (data archives), and Neurodata Without Borders (NWB) as a standard.
+As OSCAR matures, likely additions include:
+
+- **MNE-Python** (library): already ships a `CLAUDE.md` and an AI-contribution policy worth imitating.
+- **DANDI** (data archive): its OpenAPI plus `/info` endpoint is a model to copy;
+  its client-rendered dataset pages are a cautionary tale.
+- **OpenNeuro** (data archive): a GraphQL API paired with the same server-render gap.
+- **Neurodata Without Borders** (standard): an HDMF schema plus the `pynwb` validator.
 
 ---
 

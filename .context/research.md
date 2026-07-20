@@ -89,3 +89,54 @@ llmstxt.org; vercel.com/kb/guide/agent-readability-spec; support.claude.com/en/a
 owasp.org/www-project-top-10-for-large-language-model-applications;
 mintlify.com/blog/context-for-agents; checklyhq.com/blog/state-of-ai-agent-content-negotation;
 Google Search Central structured-data and AI-features documentation.
+
+## Scholarly grounding (second research pass)
+
+### FAIR is the lineage
+- Wilkinson et al. 2016, Scientific Data, doi:10.1038/sdata.2016.18: the target is an
+  "autonomously-acting, computational data explorer"; machine-actionability is a "continuum".
+  FAIR I1-I3 and R1-R1.3 already read as an agent-readiness checklist.
+  FAIR Digital Objects: persistent identifier + typed metadata + resolvable location.
+- Parallel AI-ready threads: FAIR-Squared (fair2.ai); FARR (AI Magazine 2026, doi:10.1002/aaai.70063).
+
+### Signposting (signposting.org, FAIR Signposting Profile)
+- Typed Link relations (cite-as, author, license, type, describedby, item/collection)
+  as HTTP headers and HTML <link> tags. HEAD-requestable, cacheable, no bespoke file format.
+  Adopted by Zenodo/Invenio, Dataverse, DSpace 7, HAL. More protocol-native than llms.txt for scholarly resources.
+
+### Bioschemas (bioschemas.org/profiles)
+- schema.org profiles for science with Minimum/Recommended/Optional obligation levels:
+  Dataset, ComputationalTool + FormalParameter (tool and function I/O), Person, TrainingMaterial, DataCatalog.
+  OSCAR should require input/output for tools where Bioschemas leaves them optional.
+
+### Dataset and citation metadata
+- DataCite Metadata Schema 4.7 (schema.datacite.org): six mandatory fields back cite-as and DOIs.
+- RO-Crate 1.1 (researchobject.org/ro-crate) for data+code+metadata bundles (WorkflowHub, OME, LDaCA).
+- Croissant 1.1.0 (mlcommons) for machine-learning-relevant datasets.
+
+### Neuroscience precedents
+- BIDS: machine-readable schema (YAML) -> compiled JSON -> generated docs -> reference validator;
+  `bidsschematools` on PyPI. The strongest single precedent for the standard archetype.
+- HED: schema published as XML, MediaWiki, JSON, and TSV, with a JSON form for tools; `hedtools`.
+- DANDI: OpenAPI/Swagger at a stable path plus an /api/info JSON endpoint; `dandi-cli`.
+- OpenNeuro: GraphQL API at /crn/graphql.
+- MNE-Python: ships a CLAUDE.md and an AI-contribution disclosure policy in CONTRIBUTING.md.
+- EEGLAB: MATLAB, no machine catalog; needs a bolt-on JSON/YAML function manifest.
+- NWB: HDMF YAML schema plus the `pynwb` validator.
+
+### The bidirectional gap (key finding)
+- OpenNeuro and DANDI dataset landing pages are client-rendered single-page apps
+  with no server-rendered JSON-LD; their good API-level machine-actionability is undermined at the web layer.
+- None of BIDS/OpenNeuro/DANDI/MNE-Python/EEGLAB/NEMAR/HED ships an llms.txt.
+- OSCAR positions as the fix: scholarly standards plus web conventions, server-rendered and auditable.
+
+### MCP in science
+- MCPmed (Flotho et al. 2026, Briefings in Bioinformatics, doi:10.1093/bib/bbag076; github.com/MCPmed):
+  a "breadcrumbs" pattern to wrap existing tools and command-line interfaces as MCP.
+  See also "MCP Servers for Science and HPC" (arXiv:2508.18489).
+
+### Added sources
+go-fair.org; fairdigitalobjectframework.org; bioschemas.org; signposting.org and signposting.org/FAIR/;
+schema.datacite.org (4.7); researchobject.org/ro-crate (1.1); mlcommons Croissant;
+bids-standard/bids-specification and bidsschematools; hed-standard/hed-schemas and hedtools;
+DANDI API docs; OpenNeuro GraphQL; nwb-schema; MNE-Python CLAUDE.md; MCPmed (doi:10.1093/bib/bbag076).

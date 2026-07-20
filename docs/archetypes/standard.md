@@ -44,6 +44,16 @@ The machine-readable schema is the whole game here.
 State the specification's license and how to cite it, in machine-readable form.
 Standards spread by being reused; make the terms and the credit unambiguous.
 
+## Precedent and specifics
+
+- **The model to copy is BIDS:** a modular machine-readable schema in source (YAML),
+  compiled to a single JSON, which then generates the human docs and feeds the reference validator.
+  One source of truth, three consumers.
+- **Ship the schema in more than one machine format,** the way HED publishes XML, MediaWiki, and JSON;
+  naming the format meant for tools tells agents exactly what to read.
+- **Put the version in a machine-readable field** (a plain `SCHEMA_VERSION` file is enough),
+  so an agent can gate compatibility before it validates.
+
 ## Minimum viable setup
 
 A machine-readable schema plus a callable validator.

@@ -42,6 +42,12 @@ If it is thin or inconsistent, the agent guesses and fails.
    This turns your subcommands into callable tools an agent can invoke directly,
    with typed arguments, instead of composing raw shell strings.
 
+## Precedent and specifics
+
+- **Describe inputs and outputs,** not just the command's existence,
+  using the Bioschemas `ComputationalTool` and `FormalParameter` profiles.
+- **Wrapping as MCP need not be a rewrite;** the MCPmed "breadcrumbs" pattern wraps an existing tool.
+
 ## Minimum viable setup
 
 Great `--help` on every subcommand, plus an `AGENTS.md` with a worked example.

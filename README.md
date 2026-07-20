@@ -47,7 +47,19 @@ What a human sees                 What an agent reads (/llms.txt)
                                   - [Demo](https://...): try it now
 ```
 
-## The five archetypes
+## Not a fad: FAIR made practical
+
+Machine-actionability is not new.
+The FAIR principles (2016) already called for data usable by an
+"autonomously-acting, computational data explorer."
+OSCAR operationalizes FAIR's Interoperable and Reusable principles for a new such explorer,
+the AI agent, and extends them from datasets to every kind of tool.
+It also closes a gap: parts of the scholarly web solved structured metadata years ago
+but now regress into client-rendered app shells an agent cannot read,
+while the newer agent conventions have barely reached open science at all.
+See [`docs/grounding.md`](docs/grounding.md).
+
+## The archetypes
 
 A "tool" is not one thing, so OSCAR gives a recipe per archetype.
 Most projects are a combination of two or three.

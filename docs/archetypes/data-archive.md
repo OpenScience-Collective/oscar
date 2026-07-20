@@ -53,6 +53,17 @@ The techniques below are how you answer them.
    (for machine-learning consumers, the Croissant metadata format is emerging),
    so agents built for that ecosystem understand your data natively.
 
+## Precedent and specifics
+
+- **Citation metadata:** every DOI-minted record should carry the DataCite mandatory fields
+  (identifier, creator, title, publisher, publication year, resource type). This is what backs `cite-as`.
+- **Refine with Bioschemas:** the Bioschemas `Dataset` profile sets explicit minimum fields beyond plain schema.org.
+- **Signpost each dataset:** `cite-as` to the DOI, `license`, `describedby` to the metadata record,
+  and `item` or `collection` for the dataset-to-file relations.
+- **Server-render the card.** Landing pages that build their metadata with client-side script
+  are invisible to a plain request; some major neuroscience archives currently regress this way.
+  Make the documented API the real agent surface, and render the metadata in the returned HTML.
+
 ## Minimum viable setup
 
 schema.org `Dataset` on each dataset page, plus a machine-readable catalog of all of them.

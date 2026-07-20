@@ -12,12 +12,14 @@ A resource of the OpenScience Collective, sibling to the Open Science Assistant 
 - [x] Self-audit checklist (docs/checklist.md).
 - [x] Copy-paste templates (templates/): llms.txt, AGENTS.md, robots.txt, JSON-LD SoftwareApplication.
 - [x] Brand (brand/): logo and favicon in the OSC family.
+- [x] Community files: CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, CITATION.cff.
+- [x] Two more archetypes (research lab site, standard) and the licensing principle.
+- [x] Scholarly grounding (docs/grounding.md): FAIR, Signposting, Bioschemas, neuroscience precedents.
+- [x] osc.earth integration opened as PR #15 (/oscar page, footer link, llms.txt, robots.txt).
 
 ## Next
-- [ ] **Website integration (in the osc.earth repo, not here):**
-  add an /oscar landing page built like the OSA page with the human/agent dual view;
-  add OSCAR to the nav and a quiet "For AI agents" footer link;
-  ship the reference files on osc.earth itself (/llms.txt, AI-aware robots.txt, richer JSON-LD).
+- [~] **Website integration (osc.earth repo):** opened as PR #15; awaiting review and merge.
+  Follow-up: consider Signposting `Link` headers and per-page markdown mirrors on osc.earth.
 - [ ] **Deepen the archetype guides** with the research findings and specific tooling
   (llms.txt generators, markdown-mirror integrations, MCP server starters).
 - [ ] **Worked examples (examples/):** HEDit, EEGLAB, NEMAR. See examples/README.md.

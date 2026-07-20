@@ -41,6 +41,17 @@ A precisely documented public surface is the difference between working code and
 6. **Optional: an MCP server** exposing your highest-value operations as callable tools,
    so an agent can run an analysis step without generating and executing arbitrary code.
 
+## Precedent and specifics
+
+- **A model to copy:** MNE-Python ships a `CLAUDE.md` with architecture notes for agents
+  and an AI-contribution disclosure policy in its `CONTRIBUTING.md`. Both are worth imitating.
+- **Describe your callable surface** with the Bioschemas `ComputationalTool` and `FormalParameter` profiles,
+  so a function's inputs and outputs, not just its existence, are machine-discoverable.
+- **If your library implements a standard,** expose the schema as an importable object,
+  the way `bidsschematools` loads the BIDS schema, not only as prose docs.
+- **MATLAB toolboxes** (such as EEGLAB) have no package-registry hook and no docstring standard;
+  the pragmatic minimum is a checked-in JSON or YAML manifest of function names, arguments, and help text.
+
 ## Minimum viable setup
 
 Accurate, example-led docstrings on the public API, plus a docs `llms.txt`.
