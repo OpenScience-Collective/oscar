@@ -1,0 +1,40 @@
+{
+  "_comment": "OSCAR example: schema.org Dataset for NEMAR dataset nm000103. Server-render this inside a <script type=\"application/ld+json\"> tag in the dataset page head so a plain HTTP request returns it. Remove this _comment field before shipping.",
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Healthy Brain Network EEG (Not for Commercial Use)",
+  "alternateName": "HBN-EEG NC, nm000103",
+  "description": "EEG and behavioral data from the Child Mind Institute Healthy Brain Network (HBN), curated into the Brain Imaging Data Structure (BIDS) with Hierarchical Event Descriptors (HED). 447 participants, ages 5 to 21.",
+  "identifier": "https://doi.org/10.5281/zenodo.17306881",
+  "url": "https://data.nemar.org/nm000103/latest/",
+  "version": "1.0.0",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "conditionsOfAccess": "Non-commercial use only (CC-BY-NC-SA 4.0). Participants did not consent to commercial use.",
+  "creator": [
+    { "@type": "Person", "name": "Seyed Yahya Shirazi" },
+    { "@type": "Person", "name": "Alexandre Franco" },
+    { "@type": "Person", "name": "Mauricio Scopel Hoffmann" },
+    { "@type": "Person", "name": "Nathalia B. Esper" },
+    { "@type": "Person", "name": "Dung Truong" },
+    { "@type": "Person", "name": "Arnaud Delorme" },
+    { "@type": "Person", "name": "Michael Milham" },
+    { "@type": "Person", "name": "Scott Makeig" }
+  ],
+  "citation": [
+    "https://doi.org/10.1038/sdata.2017.181",
+    "https://doi.org/10.1038/sdata.2017.40"
+  ],
+  "measurementTechnique": "Electroencephalography (EEG)",
+  "keywords": "EEG, BIDS, HED, Healthy Brain Network, developmental neuroscience, child, adolescent",
+  "includedInDataCatalog": { "@type": "DataCatalog", "name": "NEMAR", "url": "https://nemar.org" },
+  "isBasedOn": "https://openneuro.org",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "contentUrl": "https://data.nemar.org/nm000103/latest/",
+      "encodingFormat": "https://bids.neuroimaging.io",
+      "contentSize": "270 GB",
+      "description": "Browsable BIDS tree on S3. Download the whole dataset with `nemar dataset download nm000103`, fetch selected files with `nemar dataset clone` then `nemar dataset get`, or fetch individual small files over HTTP."
+    }
+  ]
+}

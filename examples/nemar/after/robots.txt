@@ -1,0 +1,37 @@
+# NEMAR. We welcome AI agents. The data lives at data.nemar.org; see /llms.txt and
+# https://github.com/nemarOrg/nemar-cli for how to access datasets programmatically.
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# --- OpenAI ---
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Google and Apple ---
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Others ---
+User-agent: PerplexityBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
+
+# Add your sitemap if you publish one:
+# Sitemap: https://nemar.org/sitemap.xml

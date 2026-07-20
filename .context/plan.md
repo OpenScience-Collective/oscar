@@ -22,7 +22,7 @@ A resource of the OpenScience Collective, sibling to the Open Science Assistant 
   Follow-up: consider Signposting `Link` headers and per-page markdown mirrors on osc.earth.
 - [ ] **Deepen the archetype guides** with the research findings and specific tooling
   (llms.txt generators, markdown-mirror integrations, MCP server starters).
-- [ ] **Worked examples (examples/):** HEDit, EEGLAB, NEMAR. See examples/README.md.
+- [~] **Worked examples (examples/):** NEMAR built (examples/nemar/); HEDit and EEGLAB next.
 - [ ] **Generator + validator (Bun + TypeScript):**
   generate llms.txt from a small config or a sitemap;
   validate a live site against docs/checklist.md and report gaps.

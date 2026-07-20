@@ -1,0 +1,25 @@
+# NEMAR
+
+> The Neuroelectromagnetic Data Archive and Tools Resource: an open archive of human EEG, MEG,
+> and iEEG datasets in Brain Imaging Data Structure (BIDS) format, sourced from OpenNeuro. The
+> website is a browser application; the data is hosted at data.nemar.org and accessed with
+> nemar-cli or DataLad, not scraped from the page.
+
+## Start here
+- [Browse datasets](https://nemar.org/dataexplorer): search and filter the archive
+- [Documentation](https://docs.nemar.org): guides and the command-line reference
+- [Data host](https://data.nemar.org): the actual BIDS dataset files, at /<id>/latest/
+
+## Get the data
+- [nemar-cli](https://github.com/nemarOrg/nemar-cli): `bun install -g nemar-cli`, then `nemar dataset download <id>` for the full dataset. `clone` alone does not fetch data; use `nemar dataset clone <id>` then `nemar dataset get <files>` for a selective download
+- Direct file fetch: `wget https://data.nemar.org/<id>/latest/<file>` for small subsets
+- [NSG compute](https://nemar.org/nsg_for_nemar): process datasets without downloading them
+
+## Understand the data
+- [BIDS](https://bids.neuroimaging.io): how each dataset is structured
+- [HED](https://www.hedtags.org): the event annotations
+- [OpenNeuro](https://openneuro.org): the upstream source of many datasets
+
+## Notes for agents
+- A dataset page is a single-page app; the files are not in its HTML. Use the CLI, DataLad, or data.nemar.org.
+- Dataset licenses vary and are often non-commercial. Check each dataset's license before use.
