@@ -84,6 +84,24 @@ Every one produces a public, auditable artifact.
   (`Dataset`, `ComputationalTool`, `FormalParameter`, `Person`, `TrainingMaterial`),
   each with explicit Minimum, Recommended, and Optional fields. See [bioschemas.org](https://bioschemas.org).
 
+## Where each file goes
+
+You have the *what* above; this is the *where*, and whether each file is site-wide or per-page.
+
+| Artifact | Location | Scope |
+|----------|----------|-------|
+| `robots.txt` | site root, `/robots.txt` | one per origin, never per-page |
+| `llms.txt` | site root, `/llms.txt` | one per site; links out to per-section pages |
+| `AGENTS.md` | repo root, optionally site root | one per repo; may nest per subdirectory, closest wins |
+| JSON-LD / schema.org | each page's `<head>`, server-rendered | per page |
+| Markdown mirror | beside each page, `/x` to `/x.md` | per page |
+| Signposting `Link` | HTTP header or `<link>` per resource | per resource |
+
+You never fork `llms.txt` or `robots.txt` per page.
+Per-page detail is the JSON-LD's job:
+a homepage carries `Organization`, a dataset page `Dataset`, a tool page `SoftwareApplication`.
+The one root `llms.txt` gains depth by linking to those pages, not by cloning itself.
+
 ## Tooling and validation
 
 You do not have to eyeball this.

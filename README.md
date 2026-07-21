@@ -79,6 +79,24 @@ data archives, tools and toolsets, research lab and project sites, and standards
 The set is meant to be extensible; new archetypes and worked examples are added as the landscape grows.
 Full guides live in [`docs/archetypes/`](docs/archetypes/).
 
+## Where each file goes
+
+Two files are site-wide and live at the origin root; everything else is per-resource.
+
+| Artifact | Location | Scope |
+|----------|----------|-------|
+| `robots.txt` | site root, `/robots.txt` | one per origin, never per-page |
+| `llms.txt` | site root, `/llms.txt` | one per site; links out to per-section pages |
+| `AGENTS.md` | repo root, optionally site root | one per repo; may nest per subdirectory, closest wins |
+| JSON-LD / schema.org | each page's `<head>`, server-rendered | per page |
+| Markdown mirror | beside each page, `/x` to `/x.md` | per page |
+| Signposting `Link` | HTTP header or `<link>` per resource | per resource |
+
+You never fork `llms.txt` or `robots.txt` per page.
+Per-page detail is the JSON-LD's job:
+a homepage carries `Organization`, a dataset page `Dataset`, a tool page `SoftwareApplication`.
+The one root `llms.txt` gains depth by linking to those pages, not by cloning itself.
+
 ## Layout
 
 ```
