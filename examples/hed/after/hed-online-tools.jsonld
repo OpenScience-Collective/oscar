@@ -8,7 +8,7 @@
   "operatingSystem": "Web",
   "url": "https://hedtools.org/hed",
   "description": "Browser tools and a JSON web service to validate, assemble, and remodel HED (Hierarchical Event Descriptor) annotations for events in Brain Imaging Data Structure (BIDS) datasets.",
-  "softwareHelp": "https://www.hed-resources.org",
+  "softwareHelp": "https://www.hedtags.org/hed-resources",
   "author": {
     "@type": "Organization",
     "name": "HED Standard",

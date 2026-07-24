@@ -9,11 +9,11 @@ HED is not one kind of tool. It is, at once:
 
 - a **standard** (the HED schema and specification, with validators),
 - a **multi-page website** (hedtags.org: an introduction, a resources hub, a schema browser, and links to the tools),
-- a **library**, twice over (Python `hedtools` and a JavaScript validator),
+- a **library** (Python `hedtools` and a JavaScript validator),
 - a **web app and API** (the online tools at hedtools.org with a JSON web service), and
-- it already ships a **Model Context Protocol (MCP) server** for validation.
+- it ships a **Model Context Protocol (MCP) server** for validation.
 
-So HED's action layer is strong: an agent that finds the tools can validate a HED string,
+HED's action layer includes: an agent that finds the tools can validate a HED string,
 a Brain Imaging Data Structure (BIDS) events file, or a JSON sidecar through Python, JavaScript, the web service, or MCP.
 What is missing is the **discovery layer**: nothing on the site tells an agent, in machine-readable form,
 that these tools exist, where they are, and which to use.
