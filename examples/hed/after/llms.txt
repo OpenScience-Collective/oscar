@@ -1,11 +1,9 @@
 # HED (Hierarchical Event Descriptors)
 
 > HED (Hierarchical Event Descriptors) is an ecosystem with a standardized, versioned, machine-readable vocabulary (HED schema) 
-> for describing what happened during an experiment (the experimental events) as well as other relevant metadata such as 
-> participant state and phenotype. 
-> The HED ecosystem includes annotation validators in Python and JavaScript, an online web service, 
-> and a Model Context Protocol (MCP) server as well as a suite of tools to
-> support analysis using HED annotations. HED annotation behavior and interpretation are governed by the HED specification.
+> for describing what happened during an experiment (the experimental events) as well as other relevant metadata such as participant state and phenotype. 
+> The HED ecosystem includes annotation validators in Python and JavaScript, an online web service, and a Model Context Protocol (MCP) server as well as a suite of tools to support analysis using HED annotations. 
+> HED annotation behavior and interpretation are governed by the HED specification.
 > HED is widely used in the Brain Imaging Data Structure (BIDS) and is being extended to Neurodata Without Borders (NWB). 
 > HED endorsed by INCF, BIDS, NWB, NEMAR, and OpenNeuro.
 

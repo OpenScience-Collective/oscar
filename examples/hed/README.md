@@ -1,7 +1,6 @@
 # Worked example: HED
 
-HED (Hierarchical Event Descriptors, hedtags.org) is the example where nearly every archetype meets,
-and where a project already has the hard part, the action layer, but not the discovery layer that lets agents find it.
+HED (Hierarchical Event Descriptors, hedtags.org) is the example where nearly every archetype meets, and where a project already has the hard part, the action layer, but not the discovery layer that lets agents find it.
 
 ## Why HED is the complete example
 
@@ -15,8 +14,7 @@ HED is not one kind of tool. It is, at once:
 
 HED's action layer includes: an agent that finds the tools can validate a HED string,
 a Brain Imaging Data Structure (BIDS) events file, or a JSON sidecar through Python, JavaScript, the web service, or MCP.
-What is missing is the **discovery layer**: nothing on the site tells an agent, in machine-readable form,
-that these tools exist, where they are, and which to use.
+What is missing is the **discovery layer**: nothing on the site tells an agent in machine-readable form that these tools exist, where they are, and which to use.
 
 ## The multi-page question
 

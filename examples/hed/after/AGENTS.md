@@ -3,7 +3,8 @@
 ## What this is
 HED (Hierarchical Event Descriptors) is an ecosystem with a standardized, versioned, machine-readable vocabulary (HED schema) for describing what happened during an experiment (the experimental events) as well as other relevant metadata such as participant state and phenotype. 
 The HED ecosystem includes annotation validators in Python and JavaScript, an online web service, and a Model Context Protocol (MCP) server as well as a suite of tools to
-support analysis using HED annotations. HED annotation behavior and interpretation are governed by the HED specification.
+support analysis using HED annotations. 
+HED annotation behavior and interpretation are governed by the HED specification.
 HED is widely used in the Brain Imaging Data Structure (BIDS) and is being extended to
 Neurodata Without Borders (NWB).
 
@@ -18,8 +19,8 @@ Do not hand back an unvalidated HED string.
 - **MCP:** the `hed-standard/hed-mcp` server exposes validation as callable tools for any MCP client.
 
 ## Target a schema version
-The vocabulary is versioned (for example 8.4.0). State the version you annotated against,
-and check compatibility before validating.
+The vocabulary is versioned (for example 8.4.0). 
+State the version you annotated against and check compatibility before validating.
 
 ## Learn the vocabulary
 - Schemas (source of truth): https://github.com/hed-standard/hed-schemas
