@@ -1,26 +1,29 @@
 # HED (Hierarchical Event Descriptors)
 
-> HED is a standardized, machine-readable vocabulary for describing what happened during an
-> experiment, linking brain, body, behavior, and experience through metadata. It is a standard
-> with a versioned schema, Python and JavaScript validators, an online web service, and a Model
-> Context Protocol (MCP) server. Used in the Brain Imaging Data Structure (BIDS); endorsed by
-> INCF, BIDS, NWB, NEMAR, and OpenNeuro.
+> HED (Hierarchical Event Descriptors) is an ecosystem with a standardized, versioned, machine-readable vocabulary (HED schema) 
+> for describing what happened during an experiment (the experimental events) as well as other relevant metadata such as participant state and phenotype. 
+> The HED ecosystem includes annotation validators in Python and JavaScript, an online web service, and a Model Context Protocol (MCP) server as well as a suite of tools to support analysis using HED annotations. 
+> HED annotation behavior and interpretation are governed by the HED specification.
+> HED is widely used in the Brain Imaging Data Structure (BIDS) and is being extended to Neurodata Without Borders (NWB). 
+> HED endorsed by INCF, BIDS, NWB, NEMAR, and OpenNeuro.
 
 ## Start here
 - [What HED is](https://www.hedtags.org): the introduction and the roles it serves (experimenter, annotator, analyst, tool developer, schema builder)
-- [HED Resources](https://www.hed-resources.org): tutorials, guides, and worked examples
-- [Schema browser](https://www.hedtags.org): explore the HED vocabulary
+- [HED Resources](https://www.hedtags.org/hed-resources): tutorials, guides, and worked examples
+- [Schema browser](https://www.hedtags.org/hed-schema-browser): explore the HED vocabulary
 - [Online tools](https://hedtools.org/hed): validate, assemble, and remodel in the browser (latest features: https://hedtools.org/hed_dev)
+- [HED use](https://www.hedtags.org/hed-resources/HowCanYouUseHed.html)
+- [HED semantices](https://www.hedtags.org/hed-resources/HedAnnotationSemantics.html)
 
 ## The standard
 - [Specification](https://github.com/hed-standard/hed-specification): the HED spec, versioned and citable
-- [Schemas](https://github.com/hed-standard/hed-schemas): the vocabulary in XML, MediaWiki, and TSV, versioned (for example 8.3.0)
-- [HED in BIDS](https://bids.neuroimaging.io): how HED annotates events in BIDS datasets
+- [Standardized HED vocabularies (HED schemas)](https://github.com/hed-standard/hed-schemas): the vocabulary in XML, MediaWiki, and TSV, versioned (for example 8.4.0)
+- [HED in BIDS](https://www.hedtags.org/hed-resources/BidsAnnotationQuickstart.html): how HED annotates events in BIDS datasets
 
 ## Validate and build (tools)
 - [Python tools](https://github.com/hed-standard/hed-python): `pip install hedtools`, for validation and remodeling
 - [JavaScript validator](https://github.com/hed-standard/hed-javascript): `npm install hed-validator`
-- [Web service](https://hedtools.org/hed): browser tools plus a JSON web service (docs: https://hed-web.readthedocs.io)
+- [Web service](https://hedtools.org/hed): UI plus a JSON web service (docs: https://www.hedtags.org/hed-server) for validation and analysis
 - [MCP server](https://github.com/hed-standard/hed-mcp): validate HED strings, BIDS TSV files, and JSON sidecars from any MCP client
 
 ## Notes for agents
