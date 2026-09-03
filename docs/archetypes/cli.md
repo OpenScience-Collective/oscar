@@ -47,7 +47,6 @@ and it is worth knowing exactly where that evidence points.
    MCP adoption is vendor-broad and growing, and a server is a real project;
    it earns its cost for stateful or authenticated workflows,
    and less so for a tool an agent can already invoke correctly from good `--help`.
-   Wrapping need not be a rewrite; the MCPmed "breadcrumbs" pattern wraps an existing tool.
 
 ## Unassessed, and still good practice
 
@@ -68,6 +67,9 @@ They remain the difference between a tool an agent can use and one it cannot.
 
 6. **Keep an examples cookbook** in the docs:
    real invocations for real tasks, copy-pasteable.
+   This archetype has no Optional-tier item, which is why the summary table
+   in the top-level README lists none: the cookbook belongs here instead,
+   because nobody measured whether an agent reads one.
 
 7. **Describe inputs and outputs,** not just the command's existence,
    using the Bioschemas `ComputationalTool` and `FormalParameter` profiles.
