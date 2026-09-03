@@ -6,7 +6,7 @@
   is documented as fetching one. The Core version of this technique is the
   repository-root AGENTS.md, which nemar-cli already has. Keep this file because
   it is a good human-readable brief and costs an hour; do not count it as a
-  discovery channel. See ../../docs/evidence.md.
+  discovery channel. See ../../../docs/evidence.md.
   Delete this comment before shipping.
 -->
 

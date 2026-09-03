@@ -87,7 +87,7 @@ So a fact your page assembles client-side is not badly ranked, it is absent.
 ## Recommended: real, but narrower
 
 5. **Signpost your key relations.**
-   Add typed `Link` relations, as HTTP headers or HTML `<link>` tags,
+   Add typed `Link` relations, as Hypertext Transfer Protocol (HTTP) headers or HTML `<link>` tags,
    for how to cite the page (`cite-as`), its author, and its license: the FAIR Signposting Profile.
    An agent then gets citation, authorship, and license from a single HEAD request, no scraping.
    Adoption across scholarly repositories is real and verifiable

@@ -4,7 +4,7 @@
   OSCAR example, illustrative target. Facts current as of 2026-09-03.
   Tier: Optional. nemar.org does not serve this file today.
   Ship it because it is cheap and honest, not as a findability mechanism:
-  see ../../docs/evidence.md for why. The Core work is the server-rendered
+  see ../../../docs/evidence.md for why. The Core work is the server-rendered
   schema.org Dataset (already shipped), an AI-aware robots.txt, and a sitemap.
   Delete this comment before shipping.
 -->

@@ -104,7 +104,8 @@ or ten thousand a day, far above an archive with hundreds of datasets.
 Google Dataset Search has consumed schema.org `Dataset` markup since 2018,
 and its requirements are documented and modest:
 few strictly mandatory fields, but the ranking and display value sits in
-`creator` (with ORCID or ROR in `sameAs`), `identifier` (a DOI), `license` (a URL),
+`creator` (with ORCID or ROR in `sameAs`), `identifier` (a Digital Object Identifier, DOI),
+`license` (a URL),
 `keywords`, `isAccessibleForFree`, `temporalCoverage` and `spatialCoverage`,
 and `distribution` (a `DataDownload` with `contentUrl` and `encodingFormat`);
 text truncates at 5,000 characters
@@ -113,7 +114,7 @@ text truncates at 5,000 characters
 This is the card, and it is the technique with both the longest track record
 and the widest set of documented consumers.
 It is also the technique the JavaScript finding in section 1 makes non-negotiable:
-render it in the HTML your server returns.
+render it in the Hypertext Markup Language (HTML) your server returns.
 
 **Do not canonicalize a mirrored dataset page to the upstream archive.**
 Google's duplicate-content guidance recommends that the downstream or republishing site

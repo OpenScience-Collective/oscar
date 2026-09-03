@@ -4,7 +4,8 @@
 > Techniques are ordered by tier; see [`../evidence.md`](../evidence.md) for the citations.
 
 You have this archetype if you offer an interactive app or a service with an API.
-Examples in our ecosystem: HEDit (the HED annotation editor), and OSA itself.
+Examples in our ecosystem: HEDit (the Hierarchical Event Descriptors, or HED, annotation editor),
+and OSA itself.
 The job here is both **discovery** and **usage**:
 an agent must learn the service exists and then call it correctly.
 
@@ -30,7 +31,7 @@ and the app becomes something an agent can actually operate.
 
 ## Recommended: real, but narrower
 
-3. **Publish an OpenAPI specification** for your HTTP API.
+3. **Publish an OpenAPI specification** for your Hypertext Transfer Protocol (HTTP) API.
    Agents and tool frameworks consume it directly,
    with paths, parameters, schemas, and auth all in one place,
    and OpenAI's Custom GPT Actions read 3.0.1 and 3.1.0 specifications as they are.

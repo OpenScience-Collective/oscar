@@ -40,7 +40,7 @@ and it is worth knowing exactly where that evidence points.
 
 ## Recommended: real, but narrower
 
-3. **Wrap the tool in a Model Context Protocol (MCP) server**
+3. **Wrap the tool in an MCP server**
    if agents need to *drive* your tool rather than read about it.
    This turns your subcommands into callable tools an agent can invoke directly,
    with typed arguments, instead of composing raw shell strings.

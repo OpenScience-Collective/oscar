@@ -20,7 +20,8 @@ An agent approaching your archive needs three things answered fast:
 1. **How do I search or query?** A documented query interface or API with examples,
    so an agent finds the right dataset without scraping listing pages.
 2. **How do I get the metadata?** A direct, machine-readable way to fetch a dataset's metadata
-   (JSON, not only an HTML page), so an agent can judge fit before downloading gigabytes.
+   (JSON, not only a Hypertext Markup Language (HTML) page),
+   so an agent can judge fit before downloading gigabytes.
 3. **How do I download the data efficiently?** The exact endpoint or command for bulk and
    programmatic access (an API, an object-store bucket, a command-line tool), not just a browser button.
 
@@ -41,7 +42,7 @@ These have a documented consumer today.
 
 2. **Put everything an agent needs in the payload a plain request returns.**
    The access path, the license, the citation, and the download command
-   must be in the Hypertext Markup Language (HTML) the crawler actually fetches,
+   must be in the HTML the crawler actually fetches,
    and they must say the same thing the page tells a human.
    This is the parity principle with teeth:
    an archive whose real instructions live only in a client-rendered panel
