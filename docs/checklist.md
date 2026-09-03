@@ -127,7 +127,8 @@ and no study is needed to establish that.
       Most AI crawlers execute no JavaScript, so a client-rendered fact does not exist for them.
 - [ ] **No mirrored dataset page carries a `rel=canonical` pointing at the upstream archive.**
       Use `sameAs` for the upstream record; the republishing site decides its own indexing.
-- [ ] Every DOI record carries the DataCite mandatory fields, so content negotiation
+- [ ] Every Digital Object Identifier (DOI) record carries the DataCite mandatory fields,
+      so content negotiation
       returns a rich record with no extra work from you.
 - [ ] The license and the required citations are machine-readable per dataset,
       not only prose in a description field.

@@ -101,12 +101,14 @@ Each entry names its tier; the citations are in [`evidence.md`](evidence.md).
   Server-render it: most AI crawlers execute no JavaScript,
   so a client-built card does not exist for them.
 - **Markdown mirrors** (Optional) A clean `.md` version of each page,
-  served by content negotiation or a `.md` URL, so agents skip the HTML noise.
+  served by content negotiation or a `.md` URL,
+  so agents skip the Hypertext Markup Language (HTML) noise.
   The efficiency argument is sound and the uptake is unmeasured:
   the vendor documenting the pattern cites no server-log evidence that agents request markdown.
 - **Machine-readable help** For command-line tools, a stable `--help`
   and ideally a structured form such as `--help=json`.
-- **OpenAPI** (Recommended) A specification of your HTTP API that agents and tools consume directly.
+- **OpenAPI** (Recommended) A specification of your Hypertext Transfer Protocol (HTTP) API
+  that agents and tools consume directly.
   OpenAI's Actions read 3.0.1 and 3.1.0 specifications as they are.
 - **Model Context Protocol (MCP)** (Recommended) A server that exposes your tool's *capabilities*,
   not just its docs, so an agent can call it. See [modelcontextprotocol.io](https://modelcontextprotocol.io).

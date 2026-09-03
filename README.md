@@ -34,7 +34,8 @@ See [`docs/principles.md`](docs/principles.md).
 ## What agents actually see
 
 An agent never sees your rendered page, your styling, or your buttons.
-It reads the text in the payload your server returns.
+It reads the text in the payload your server returns,
+the Hypertext Markup Language (HTML) itself.
 Most AI crawlers do not execute JavaScript at all,
 so anything your page assembles with a script does not exist for them.
 OSCAR's job is to make that returned text excellent and honest.
@@ -83,7 +84,7 @@ Every tier traces to a citation in [`docs/evidence.md`](docs/evidence.md).
 | Web app / API | HEDit, OSA | JSON-LD `SoftwareApplication`, repo-root `AGENTS.md` | OpenAPI spec, MCP server | `llms.txt` |
 | Data archive | NEMAR | schema.org `Dataset`, complete DataCite record, `sameAs` never `canonical`, documented bulk download | registries, Signposting, stream-versus-download guidance | `llms.txt`, Croissant export |
 | Research lab / project site | a lab or project website | JSON-LD `Organization`/`Person`/`SoftwareSourceCode`, persistent identifiers, AI-aware `robots.txt` | Signposting `Link` headers | `llms.txt` |
-| Standard / specification | BIDS, HED | versioned citable spec with a complete DOI record, repo-root `AGENTS.md` | callable validator over an API or MCP | `llms.txt` |
+| Standard / specification | BIDS, HED | versioned citable spec with a complete Digital Object Identifier (DOI) record, repo-root `AGENTS.md` | callable validator over an API or MCP | `llms.txt` |
 
 The tiers rank evidence, not value.
 For the usage-heavy archetypes, library and standard, the highest-value techniques
@@ -108,7 +109,7 @@ Two files are site-wide and live at the origin root; everything else is per-reso
 | `AGENTS.md` | repo root (Core); a site-root copy has no uptake evidence | one per repo; may nest per subdirectory, closest wins |
 | JSON-LD / schema.org | each page's `<head>`, server-rendered | per page |
 | Markdown mirror | beside each page, `/x` to `/x.md` | per page |
-| Signposting `Link` | HTTP header or `<link>` per resource | per resource |
+| Signposting `Link` | Hypertext Transfer Protocol (HTTP) header or `<link>` per resource | per resource |
 
 You never fork `llms.txt` or `robots.txt` per page.
 Per-page detail is the JSON-LD's job:
