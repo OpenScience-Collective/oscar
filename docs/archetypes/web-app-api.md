@@ -52,25 +52,28 @@ and the app becomes something an agent can actually operate.
    at a fraction of the cost.
    If you ship both, say which is canonical.
 
+## Optional: no-regret, no evidence
+
+5. **Ship a `/llms.txt`** pointing at the specification, a quickstart,
+   and one worked request-and-response.
+   Cheap and honest; not a discovery mechanism, on the current evidence.
+
 ## Unassessed, and still good practice
 
-5. **State auth and limits plainly** in the docs:
+6. **State auth and limits plainly** in the docs:
    how to get a key, what the rate limits are, what errors look like.
    An agent that knows the limits backs off; one that does not gets throttled and fails.
 
-6. **Return structured, well-typed responses** with errors that explain themselves.
+7. **Return structured, well-typed responses** with errors that explain themselves.
 
-7. **Offer a machine `/info` or `/.well-known/` descriptor.**
+8. **Offer a machine `/info` or `/.well-known/` descriptor.**
    DANDI is the model to copy: an OpenAPI specification at a stable path
    plus an `/info` endpoint returning service URLs and versions as plain JSON.
 
-8. **Signpost API responses too,** with `Link` headers, not only your HTML pages.
-
-## Optional: no-regret, no evidence
-
-9. **Ship a `/llms.txt`** pointing at the specification, a quickstart,
-   and one worked request-and-response.
-   Cheap and honest; not a discovery mechanism, on the current evidence.
+9. **Signpost API responses too,** with `Link` headers, not only your HTML pages.
+   Signposting itself is Recommended, but the adopters behind that tier are repository
+   *landing pages*; extending the same typed relations to JSON API responses
+   is a reasonable extrapolation that nobody has measured, so it sits here.
 
 ## Minimum viable setup
 
