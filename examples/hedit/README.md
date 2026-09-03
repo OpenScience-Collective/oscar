@@ -22,8 +22,9 @@ with a machine-readable output mode, is most of the battle. OSCAR just makes it 
 
 - An [`after/AGENTS.md`](after/AGENTS.md) at the repo root: install, the handful of commands that matter,
   and the one habit (use `-o json`, then validate the result).
-- A [`after/llms.txt`](after/llms.txt) for annotation.garden, so an agent discovers HEDit exists
-  and how it relates to HED.
+- A [`after/llms.txt`](after/llms.txt) for annotation.garden, describing what HEDit is
+  and how it relates to HED. Optional tier: the repo-root `AGENTS.md` above is the one
+  with evidence behind it.
 
 ## The one thing that makes it usable
 

@@ -34,9 +34,10 @@ Generate it from the `help` blocks so it does not drift, and serve it from eegla
 
 ## The rest, from the doctrine
 
-- **Discovery** ([website guide](../../docs/archetypes/website.md)): a curated [`after/llms.txt`](after/llms.txt)
-  for eeglab.org, server-rendered `SoftwareApplication` JSON-LD ([`after/eeglab.jsonld`](after/eeglab.jsonld)),
-  and an AI-aware [`after/robots.txt`](after/robots.txt).
+- **Discovery** ([website guide](../../docs/archetypes/website.md)): server-rendered `SoftwareApplication`
+  JSON-LD ([`after/eeglab.jsonld`](after/eeglab.jsonld)) and an AI-aware
+  [`after/robots.txt`](after/robots.txt) are the Core pair, with a curated
+  [`after/llms.txt`](after/llms.txt) for eeglab.org as the Optional extra.
 - **Usage** ([library guide](../../docs/archetypes/library.md)): an [`after/AGENTS.md`](after/AGENTS.md)
   that shows how to run EEGLAB headless (`eeglab nogui`) and script the common pipeline,
   plus the function manifest as the machine-readable surface.
@@ -44,7 +45,7 @@ Generate it from the `help` blocks so it does not drift, and serve it from eegla
 ## How it maps to the doctrine
 
 - MATLAB toolboxes are called out in the library guide as needing exactly this bolt-on manifest.
-- The website half is standard discovery: `llms.txt`, JSON-LD, `robots.txt`.
+- The website half is standard discovery, in tier order: JSON-LD, `robots.txt`, then `llms.txt`.
 - EEGLAB sits in an ecosystem: link out to BIDS (the `bids-matlab-tools` plugin), HED for events,
   and NEMAR and OpenNeuro for datasets, so an agent can follow the graph.
 
