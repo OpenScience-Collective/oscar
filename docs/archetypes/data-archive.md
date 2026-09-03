@@ -146,7 +146,8 @@ has published a format, not an access path.
     and only when a concrete discovery gain justifies it, such as a Hugging Face or Kaggle listing.
     Croissant is a real, adopted metadata format for machine-learning consumers,
     but it is an optional interoperability export, not a peer of your domain standard.
-    BIDS and Hierarchical Event Descriptors (HED) are peer standards to Croissant
+    The Brain Imaging Data Structure (BIDS) and Hierarchical Event Descriptors (HED)
+    are peer standards to Croissant
     in scope and standing; schema.org `Dataset` plus the domain metadata is the card.
     Croissant's `RecordSet` model targets row-and-column data,
     and there is no published precedent for applying it to raw scientific time-series.
@@ -160,7 +161,7 @@ They keep their place in the workflow; what they do not have is a measurement be
 12. **Refine with Bioschemas or RO-Crate** where they fit.
     The Bioschemas `Dataset` profile sets explicit minimum fields beyond plain schema.org,
     and RO-Crate (`ro-crate-metadata.json`) extends the same JSON-LD for a whole packaged
-    research object, a natural fit for a Brain Imaging Data Structure (BIDS) dataset.
+    research object, a natural fit for a BIDS dataset.
     Both ride the Core card's channel, which is an argument for them, and not a measurement.
 
 13. **Publish a machine-readable catalog** of all datasets:

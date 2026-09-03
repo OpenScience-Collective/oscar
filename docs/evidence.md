@@ -337,7 +337,8 @@ The generalised block is in the
 These techniques appear in OSCAR and were not examined by the 2026-09 research.
 They keep their current position and are marked as unassessed in the checklist
 rather than being promoted or demoted on evidence that does not exist:
-Bioschemas profiles, RO-Crate, DCAT, structured `--help` and `--json` output modes,
+Bioschemas profiles, RO-Crate, the Data Catalog Vocabulary (DCAT),
+structured `--help` and `--json` output modes,
 `CITATION.cff`, and the internal shape of a machine-readable catalog.
 Several of them ride the Core card channel (Bioschemas and RO-Crate are schema.org profiles),
 which is an argument for them, but it is not a measurement.

@@ -32,7 +32,8 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 
 **Core**
 
-- [ ] Structured data is server-rendered: a plain HTTP request returns the JSON-LD,
+- [ ] Structured data is server-rendered: a plain Hypertext Transfer Protocol (HTTP) request
+      returns the JSON-LD,
       not an app shell that builds it with script.
 - [ ] JSON-LD (`Organization`, and `SoftwareApplication` for a tool) is in every page head.
 - [ ] `robots.txt` names the AI user-agents you allow or disallow, and carries a `Sitemap:` line.
@@ -46,8 +47,6 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 
 - [ ] `/llms.txt` exists, is curated (not a sitemap dump), and is current.
 - [ ] Markdown mirrors are available for key pages.
-- [ ] A footer link makes the agent-facing files findable by a person.
-      (Optional as a technique, required by principle 2 as an audit path.)
 
 ## Command-line tool
 
@@ -80,7 +79,7 @@ and no study is needed to establish that.
 
 **Recommended**
 
-- [ ] A Model Context Protocol (MCP) server exposes the highest-value operations as callable tools,
+- [ ] An MCP server exposes the highest-value operations as callable tools,
       if an agent should run them rather than write code against them.
 
 **Optional**
@@ -122,7 +121,8 @@ and no study is needed to establish that.
 **Core**
 
 - [ ] Each dataset page emits schema.org `Dataset` JSON-LD with a license and identifier.
-- [ ] **Every instruction an agent needs is in the server-rendered HTML the crawler fetches,**
+- [ ] **Every instruction an agent needs is in the server-rendered Hypertext Markup Language
+      (HTML) the crawler fetches,**
       and it is the same information a human is shown on the page (parity).
       Most AI crawlers execute no JavaScript, so a client-rendered fact does not exist for them.
 - [ ] **No mirrored dataset page carries a `rel=canonical` pointing at the upstream archive.**
@@ -194,7 +194,7 @@ the unmeasured items decide whether it can mechanically apply it.
 
 **Recommended**
 
-- [ ] The validator is callable over an API or a Model Context Protocol server,
+- [ ] The validator is callable over an API or an MCP server,
       not only as a local install.
 
 **Optional**

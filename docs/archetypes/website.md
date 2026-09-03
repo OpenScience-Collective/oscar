@@ -80,9 +80,10 @@ So a fact your page assembles client-side is not badly ranked, it is absent.
    and Google uses `lastmod` only when it is consistently and verifiably accurate.
    Both ignore `priority` and `changefreq`, so do not spend time on them.
 
-4. **Link it all from the footer.**
-   A quiet "For AI agents" link makes the whole setup auditable,
-   which is principle 2, not an optimization.
+Then, whatever tier you stop at, **link it all from the footer.**
+A quiet "For AI agents" link makes the whole setup auditable.
+That is principle 2 rather than a technique, so it carries no tier:
+it is required at every tier, including if you only ever do the Core items above.
 
 ## Recommended: real, but narrower
 

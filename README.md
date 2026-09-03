@@ -79,12 +79,12 @@ Every tier traces to a citation in [`docs/evidence.md`](docs/evidence.md).
 | Archetype | Example | Core | Recommended | Optional |
 |-----------|---------|------|-------------|----------|
 | Website / docs site | eeglab.org, nemar.org | server-rendered JSON-LD, AI-aware `robots.txt`, honest `sitemap.xml` | Signposting `Link` headers | `llms.txt`, markdown mirrors |
-| Command-line tool | `nemar-cli` | repo-root `AGENTS.md`, excellent `--help` | MCP server | none |
+| Command-line tool | `nemar-cli` | repo-root `AGENTS.md`, excellent `--help` | Model Context Protocol (MCP) server | none |
 | Library / toolbox | EEGLAB (MATLAB) | repo-root `AGENTS.md`, machine-readable license | MCP server | docs `llms.txt` |
 | Web app / API | HEDit, OSA | JSON-LD `SoftwareApplication`, repo-root `AGENTS.md` | OpenAPI spec, MCP server | `llms.txt` |
 | Data archive | NEMAR | schema.org `Dataset`, complete DataCite record, `sameAs` never `canonical`, documented bulk download | registries, Signposting, stream-versus-download guidance | `llms.txt`, Croissant export |
 | Research lab / project site | a lab or project website | JSON-LD `Organization`/`Person`/`SoftwareSourceCode`, persistent identifiers, AI-aware `robots.txt` | Signposting `Link` headers | `llms.txt` |
-| Standard / specification | BIDS, HED | versioned citable spec with a complete Digital Object Identifier (DOI) record, repo-root `AGENTS.md` | callable validator over an API or MCP | `llms.txt` |
+| Standard / specification | Brain Imaging Data Structure (BIDS), Hierarchical Event Descriptors (HED) | versioned citable spec with a complete Digital Object Identifier (DOI) record, repo-root `AGENTS.md` | callable validator over an API or MCP | `llms.txt` |
 
 The tiers rank evidence, not value.
 For the usage-heavy archetypes, library and standard, the highest-value techniques

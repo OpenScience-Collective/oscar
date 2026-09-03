@@ -115,7 +115,8 @@ They are not the reason an agent will find a NEMAR dataset.
   metadata (the API, `dataset_description.json`, and the Zarr `index.json`),
   and download (`nemar-cli` or `data.nemar.org`). The card answers all three.
 - **Server-render your structured data** ([website guide](../../docs/archetypes/website.md)):
-  the schema.org `Dataset` must be in the HTML a plain request returns.
+  the schema.org `Dataset` must be in the Hypertext Markup Language (HTML)
+  a plain request returns.
   NEMAR does this; it is the single most load-bearing thing it does.
 - **`sameAs`, never `canonical`** ([data archive guide](../../docs/archetypes/data-archive.md)):
   a NEMAR page for a dataset that also exists upstream adds a NEMAR DOI,
