@@ -54,6 +54,7 @@ This is exactly the case OSCAR exists for:
 | `robots.txt` naming AI user-agent tokens, with a `Sitemap:` line | Core | **Target.** Today's `robots.txt` is a bare allow-all with no named tokens and no sitemap line. |
 | `sitemap.xml` with event-driven `<lastmod>` | Core | **Target.** No sitemap yet. |
 | `sameAs` to the upstream record, never `rel=canonical` | Core | **Target**, as an explicit policy. |
+| Signposting `Link` headers (`cite-as`, `license`, `describedby`) on dataset pages | Recommended | **Target.** None today. Cheap, and it plugs NEMAR into real repository interoperability tooling. |
 | Per-dataset agent-facing card | Unassessed | **Target.** [`dataset-nm000103.md`](after/dataset-nm000103.md) is the shape. The card format was never measured; the license, citations, and access path on it are Core. |
 | `/llms.txt` | Optional | **Target.** None today. |
 | Markdown mirrors of dataset pages | Optional | **Target.** None today. |
