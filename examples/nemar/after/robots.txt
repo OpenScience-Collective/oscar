@@ -1,37 +1,40 @@
-# NEMAR. We welcome AI agents. The data lives at data.nemar.org; see /llms.txt and
-# https://github.com/nemarOrg/nemar-cli for how to access datasets programmatically.
+# NEMAR. We welcome AI agents. Dataset pages are at https://nemar.org/dataset/<id>; the data
+# lives at https://data.nemar.org/<id>/latest/ and is fetched with https://github.com/nemarOrg/nemar-cli.
+#
+# OSCAR example, illustrative target, current as of 2026-09-03. Tier: Core.
+# nemar.org today serves a bare allow-all robots.txt with no named tokens and no
+# Sitemap line. This is the replacement. Stacked "User-agent" lines sharing ONE
+# rule are valid robots.txt syntax: every agent listed until the first rule line
+# takes that rule.
 
-# --- Anthropic ---
-User-agent: ClaudeBot
-Allow: /
-User-agent: Claude-SearchBot
-Allow: /
-User-agent: Claude-User
-Allow: /
-
-# --- OpenAI ---
-User-agent: GPTBot
-Allow: /
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-
-# --- Google and Apple ---
-User-agent: Google-Extended
-Allow: /
-User-agent: Applebot-Extended
-Allow: /
-
-# --- Others ---
-User-agent: PerplexityBot
-Allow: /
-User-agent: CCBot
-Allow: /
-
-# Everyone else
+# Everyone, including ordinary search engines.
 User-agent: *
 Allow: /
 
-# Add your sitemap if you publish one:
-# Sitemap: https://nemar.org/sitemap.xml
+# The AI-adjacent tokens, named explicitly. Redundant under the wildcard above,
+# and worth writing: it states the policy in the form several vendors' own
+# tooling checks for, and it is what a person reads to learn what NEMAR allows.
+#   training crawlers:  GPTBot, ClaudeBot, CCBot, meta-externalagent
+#   search indexes:     OAI-SearchBot, Claude-SearchBot, PerplexityBot
+#   live user fetches:  ChatGPT-User, Claude-User
+#   not crawlers:       Google-Extended, Applebot-Extended (training and grounding
+#                       tokens evaluated against pages already fetched)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: CCBot
+Allow: /
+
+# Many NEMAR datasets are non-commercial (for example CC-BY-NC-SA 4.0). That term is
+# machine-readable in each dataset page's schema.org Dataset JSON-LD, and allowing a
+# crawler here is not a licence to reuse the data it finds.
+
+Sitemap: https://nemar.org/sitemap.xml

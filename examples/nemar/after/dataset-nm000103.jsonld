@@ -1,15 +1,16 @@
 {
-  "_comment": "OSCAR example: schema.org Dataset for NEMAR dataset nm000103. Server-render this inside a <script type=\"application/ld+json\"> tag in the dataset page head so a plain HTTP request returns it. Remove this _comment field before shipping.",
+  "_comment": "OSCAR example: schema.org Dataset for NEMAR dataset nm000103, current as of 2026-09-03. Server-render this inside a <script type=\"application/ld+json\"> tag in the dataset page head so a plain HTTP request returns it; nemar.org already emits markup of this kind. Keep the page's rel=canonical on its own URL and link any upstream record with sameAs, never with canonical. Remove this _comment field before shipping.",
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Healthy Brain Network EEG (Not for Commercial Use)",
   "alternateName": "HBN-EEG NC, nm000103",
   "description": "EEG and behavioral data from the Child Mind Institute Healthy Brain Network (HBN), curated into the Brain Imaging Data Structure (BIDS) with Hierarchical Event Descriptors (HED). 447 participants, ages 5 to 21.",
-  "identifier": "https://doi.org/10.5281/zenodo.17306881",
-  "url": "https://data.nemar.org/nm000103/latest/",
+  "identifier": "https://doi.org/10.82901/nemar.nm000103",
+  "url": "https://nemar.org/dataset/nm000103",
   "version": "1.0.0",
   "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   "conditionsOfAccess": "Non-commercial use only (CC-BY-NC-SA 4.0). Participants did not consent to commercial use.",
+  "isAccessibleForFree": true,
   "creator": [
     { "@type": "Person", "name": "Seyed Yahya Shirazi" },
     { "@type": "Person", "name": "Alexandre Franco" },
@@ -27,14 +28,22 @@
   "measurementTechnique": "Electroencephalography (EEG)",
   "keywords": "EEG, BIDS, HED, Healthy Brain Network, developmental neuroscience, child, adolescent",
   "includedInDataCatalog": { "@type": "DataCatalog", "name": "NEMAR", "url": "https://nemar.org" },
-  "isBasedOn": "https://openneuro.org",
   "distribution": [
     {
       "@type": "DataDownload",
+      "name": "BIDS tree",
       "contentUrl": "https://data.nemar.org/nm000103/latest/",
       "encodingFormat": "https://bids.neuroimaging.io",
       "contentSize": "270 GB",
-      "description": "Browsable BIDS tree on S3. Download the whole dataset with `nemar dataset download nm000103`, fetch selected files with `nemar dataset clone` then `nemar dataset get`, or fetch individual small files over HTTP."
+      "description": "Browsable BIDS tree; large files are git-annex blobs on Amazon S3. Install the command-line tool with `bun add -g nemar-cli` or `npm install -g nemar-cli`. Download the whole dataset with `nemar dataset download nm000103`, fetch selected files with `nemar dataset clone nm000103` then `nemar dataset get <files>`, or fetch individual small files over HTTP."
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Zarr serving copy",
+      "contentUrl": "https://zarr.nemar.org/nm000103/zarr/index.json",
+      "encodingFormat": "application/json",
+      "description": "Derived, latest-only Zarr copy for reading a slice of a recording without downloading the dataset. index.json is the mandatory entry point: read contract_base, data_base, and s3_uri from it rather than hardcoding a bucket path. Stream for a slice; download the BIDS tree when you will touch most of the array."
     }
-  ]
+  ],
+  "_sameAs_note": "Where a dataset also exists in an upstream archive, add its record URL here as \"sameAs\". Do not add a rel=canonical pointing at it: this page carries its own DOI, validation status, and access paths, and the republishing site decides its own indexing."
 }

@@ -47,4 +47,7 @@ jobs:
           #   - commit the generated files so the site build server-renders them, or
           #   - upload dataset.jsonld and summary.json to data.nemar.org/<id>/latest/
           #     (S3) and invalidate the cache.
+          # Update sitemap.xml <lastmod> for each changed dataset in the same step:
+          # a lastmod driven by a real metadata event is what Bing and Google use,
+          # and one that changes on every run is treated as unreliable.
           echo "Publish dataset.jsonld and summary.json for each id"
