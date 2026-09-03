@@ -54,7 +54,7 @@ This is exactly the case OSCAR exists for:
 | `robots.txt` naming AI user-agent tokens, with a `Sitemap:` line | Core | **Target.** Today's `robots.txt` is a bare allow-all with no named tokens and no sitemap line. |
 | `sitemap.xml` with event-driven `<lastmod>` | Core | **Target.** No sitemap yet. |
 | `sameAs` to the upstream record, never `rel=canonical` | Core | **Target**, as an explicit policy. |
-| Per-dataset agent-facing card | Recommended | **Target.** [`dataset-nm000103.md`](after/dataset-nm000103.md) is the shape. |
+| Per-dataset agent-facing card | Unassessed | **Target.** [`dataset-nm000103.md`](after/dataset-nm000103.md) is the shape. The card format was never measured; the license, citations, and access path on it are Core. |
 | `/llms.txt` | Optional | **Target.** None today. |
 | Markdown mirrors of dataset pages | Optional | **Target.** None today. |
 | Site-root `AGENTS.md` | Optional | **Target**, and deliberately last. See the note below. |
@@ -89,7 +89,8 @@ All of it transparent, public, and auditable. Files in [`after/`](after/):
   schema.org `Dataset` for a real dataset, with the EZID DOI, the license,
   and `distribution` entries for both the BIDS tree and the Zarr serving copy.
   NEMAR already emits markup of this kind; this file is the reference shape.
-- [`dataset-nm000103.md`](after/dataset-nm000103.md) (Recommended), the crux:
+- [`dataset-nm000103.md`](after/dataset-nm000103.md) (Unassessed as a format, though every
+  fact on it is Core), the crux:
   a per-dataset card, human and agent readable,
   that answers what the dataset is, its terms, where the data is, how to download it,
   and how to assess fit without downloading anything.

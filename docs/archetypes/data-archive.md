@@ -96,23 +96,6 @@ These have a documented consumer today.
    and `item` or `collection` for the dataset-to-file relations.
    Adoption is genuine and verifiable, and every documented consumer is repository software.
 
-10. **Refine with Bioschemas or RO-Crate** where they fit.
-    The Bioschemas `Dataset` profile sets explicit minimum fields beyond plain schema.org,
-    and RO-Crate (`ro-crate-metadata.json`) extends the same JSON-LD for a whole packaged
-    research object, a natural fit for a Brain Imaging Data Structure (BIDS) dataset.
-    Both ride the Core card's channel, which is an argument for them,
-    though neither was measured by OSCAR's evidence review.
-
-11. **Publish a machine-readable catalog** of all datasets:
-    a Data Catalog Vocabulary (DCAT) catalog or a simple JSON index.
-    This is the substrate the rest of the archive's automation stands on,
-    and its uptake by agents specifically was not assessed.
-
-12. **Give each dataset a concise, agent-facing card.**
-    Modality, sample size, format, terms, and how to download,
-    in plain text an agent can quote and a human can check.
-    Generate it per dataset from the same source as the page, so the two cannot drift.
-
 ## Stream or download a cloud-optimized copy
 
 If you publish a derived, cloud-optimized serving copy of your data,
@@ -152,14 +135,14 @@ has published a format, not an access path.
 
 ## Optional: no-regret, no evidence
 
-13. **A top-level `/llms.txt`** that points at the catalog, the search, and the docs,
+10. **A top-level `/llms.txt`** that points at the catalog, the search, and the docs,
     not at ten thousand individual datasets.
     Cheap and honest, and the best available measurement says these files are not being fetched:
     97 percent of published `llms.txt` files received zero requests
     in a study of 137,210 domains.
     Ship it, and do not count it as a findability win.
 
-14. **A Croissant export, for the tabular sidecars only,**
+11. **A Croissant export, for the tabular sidecars only,**
     and only when a concrete discovery gain justifies it, such as a Hugging Face or Kaggle listing.
     Croissant is a real, adopted metadata format for machine-learning consumers,
     but it is an optional interoperability export, not a peer of your domain standard.
@@ -167,6 +150,30 @@ has published a format, not an access path.
     in scope and standing; schema.org `Dataset` plus the domain metadata is the card.
     Croissant's `RecordSet` model targets row-and-column data,
     and there is no published precedent for applying it to raw scientific time-series.
+
+## Unassessed, and still good practice
+
+OSCAR's 2026-09 evidence review did not examine these,
+so they are neither promoted nor demoted.
+They keep their place in the workflow; what they do not have is a measurement behind them.
+
+12. **Refine with Bioschemas or RO-Crate** where they fit.
+    The Bioschemas `Dataset` profile sets explicit minimum fields beyond plain schema.org,
+    and RO-Crate (`ro-crate-metadata.json`) extends the same JSON-LD for a whole packaged
+    research object, a natural fit for a Brain Imaging Data Structure (BIDS) dataset.
+    Both ride the Core card's channel, which is an argument for them, and not a measurement.
+
+13. **Publish a machine-readable catalog** of all datasets:
+    a Data Catalog Vocabulary (DCAT) catalog or a simple JSON index.
+    This is the substrate the rest of the archive's automation stands on,
+    and its uptake by agents specifically was not assessed.
+
+14. **Give each dataset a concise, agent-facing card.**
+    Modality, sample size, format, terms, and how to download,
+    in plain text an agent can quote and a human can check.
+    Every fact on the card is a Core item; the card format itself was not measured,
+    which is why it sits here rather than a tier above.
+    Generate it per dataset from the same source as the page, so the two cannot drift.
 
 ## Minimum viable setup
 
