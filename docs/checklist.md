@@ -69,11 +69,19 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 
 ## Library / toolbox
 
+For this archetype the Unassessed group is the substance, not the leftovers.
+An agent cannot call a function whose signature it cannot see,
+and no study is needed to establish that.
+
 **Core**
 
 - [ ] `AGENTS.md` at the repository root states install, the main entry points, and the gotchas.
-- [ ] Every public function has an accurate, example-led docstring with argument types and units.
-- [ ] Signatures are explicit; defaults are documented.
+- [ ] The license and citation are machine-readable (SPDX in package metadata, `LICENSE`, `CITATION.cff`).
+
+**Recommended**
+
+- [ ] A Model Context Protocol (MCP) server exposes the highest-value operations as callable tools,
+      if an agent should run them rather than write code against them.
 
 **Optional**
 
@@ -81,7 +89,11 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 
 **Unassessed**
 
+- [ ] Every public function has an accurate, example-led docstring with argument types and units.
+- [ ] Signatures are explicit; defaults are documented.
+- [ ] Package metadata is accurate (`pyproject.toml`, `DESCRIPTION`, `info.xml`).
 - [ ] Worked notebooks or scripts cover the common workflows.
+- [ ] Bioschemas `ComputationalTool` and `FormalParameter` describe the callable surface.
 
 ## Web app / API
 
@@ -151,6 +163,12 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 
 - [ ] JSON-LD marks up the lab, its people, software, datasets, and papers, server-rendered.
 - [ ] Persistent identifiers are exposed (ORCID, ROR, DOI).
+- [ ] `robots.txt` names the AI user-agents you allow, with a `Sitemap:` line.
+- [ ] Citation and license for the site and each output are machine-readable.
+
+**Recommended**
+
+- [ ] `rel="author"` points at each member's ORCID and `rel="cite-as"` at a DOI on every publication.
 
 **Optional**
 
@@ -159,21 +177,33 @@ They are the non-negotiables, and they hold whatever the evidence says about any
 **Unassessed**
 
 - [ ] A canonical index links each output to its own home.
+- [ ] Bioschemas `Person` and `TrainingMaterial` profiles are applied to the lab's outputs.
 
 ## Standard / specification
+
+For this archetype too, the Unassessed group is the substance.
+The tiers say how an agent finds and cites your standard;
+the unmeasured items decide whether it can mechanically apply it.
 
 **Core**
 
 - [ ] The specification is versioned and citable, with a DOI whose DataCite record is complete.
 - [ ] `AGENTS.md` at the repository root says how to validate a document against the specification.
+- [ ] The specification's license and citation are machine-readable.
 
 **Recommended**
 
 - [ ] The validator is callable over an API or a Model Context Protocol server,
       not only as a local install.
 
+**Optional**
+
+- [ ] An `llms.txt` points at the schema, the validator, and the key sections.
+
 **Unassessed**
 
 - [ ] The specification is published as a machine-readable schema.
-- [ ] A validator exists and is callable (command-line, library, or API).
+- [ ] A reference validator exists as a command-line tool and a library.
 - [ ] Conformant examples (and a few labeled non-conformant ones) are provided.
+- [ ] The schema ships in more than one machine format.
+- [ ] The version is in a machine-readable field an agent can gate on.
