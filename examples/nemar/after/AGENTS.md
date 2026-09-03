@@ -33,7 +33,7 @@ Then:
 
     nemar dataset list                 # list datasets
     nemar dataset search <query>       # search the catalog
-    nemar dataset status nm000103      # one dataset's status (alias: view)
+    nemar dataset status nm000103      # one dataset's status (alias `view` from nemar-cli 0.9.15)
     nemar dataset download nm000103    # full dataset: metadata and data
     nemar dataset clone nm000103       # git-annex only: metadata and pointers, no data
     nemar dataset get <path>           # download specific files after a clone

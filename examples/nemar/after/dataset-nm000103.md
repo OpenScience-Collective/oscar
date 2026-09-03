@@ -54,7 +54,8 @@ For a few small files, a direct fetch also works:
 
 ## Assess fit without downloading
 - `nemar dataset list`, `nemar dataset search <query>`, and
-  `nemar dataset status nm000103` (alias `view`) answer most questions from the terminal.
+  `nemar dataset status nm000103` answer most questions from the terminal
+  (alias `view` from nemar-cli 0.9.15).
 - The metadata API needs no download: `GET https://api.nemar.org/datasets/nm000103`,
   with `GET /datasets` and `GET /datasets/search` for the catalog.
 - Read `participants.tsv` and `dataset_description.json` directly from

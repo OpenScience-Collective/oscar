@@ -25,7 +25,7 @@
 - `GET https://api.nemar.org/datasets/<id>`: one dataset's metadata, including its DOI and license
 
 ## Get the data
-- [nemar-cli](https://github.com/nemarOrg/nemar-cli): `bun add -g nemar-cli` or `npm install -g nemar-cli`, then `nemar dataset download <id>` for the full dataset. `clone` alone does not fetch data; use `nemar dataset clone <id>` then `nemar dataset get <path>` for a selective download. `nemar dataset list`, `nemar dataset search <query>`, and `nemar dataset status <id>` (alias `view`) answer most questions without downloading anything
+- [nemar-cli](https://github.com/nemarOrg/nemar-cli): `bun add -g nemar-cli` or `npm install -g nemar-cli`, then `nemar dataset download <id>` for the full dataset. `clone` alone does not fetch data; use `nemar dataset clone <id>` then `nemar dataset get <path>` for a selective download. `nemar dataset list`, `nemar dataset search <query>`, and `nemar dataset status <id>` (alias `view` from nemar-cli 0.9.15) answer most questions without downloading anything
 - Direct file fetch: `wget https://data.nemar.org/<id>/latest/<file>` for small subsets
 - [NSG compute](https://nemar.org/nsg_for_nemar): process datasets without downloading them
 
