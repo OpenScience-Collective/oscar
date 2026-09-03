@@ -47,6 +47,11 @@ and it is worth knowing exactly where that evidence points.
    MCP adoption is vendor-broad and growing, and a server is a real project;
    it earns its cost for stateful or authenticated workflows,
    and less so for a tool an agent can already invoke correctly from good `--help`.
+   Wrapping need not be a rewrite: the MCPmed "breadcrumbs" pattern wraps an existing
+   tool or command-line interface as an MCP server
+   ([Flotho et al. 2026, *Briefings in Bioinformatics*](https://doi.org/10.1093/bib/bbag076)).
+   That is a published pattern, not a measurement of uptake,
+   which is why it supports the Recommended tier rather than lifting it.
 
 ## Unassessed, and still good practice
 
