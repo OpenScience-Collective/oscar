@@ -59,6 +59,8 @@ const raw = JSON.parse(readFileSync(metadataPath, "utf8"));
 const m = raw.entry?.["0"] ?? raw; // support wrapped or flat records
 
 const dataUrl = `https://data.nemar.org/${id}/latest/`;
+const landingUrl = `https://nemar.org/dataset/${id}`;
+const zarrIndexUrl = `https://zarr.nemar.org/${id}/zarr/index.json`;
 const modality = MODALITY_LABELS[(m.modalities ?? "").toLowerCase()] ?? m.modalities ?? undefined;
 const citations = extractDois(m.HowToAcknowledge ?? "", m.ReferencesAndLinks ?? "");
 const licUrl = licenseUrl(m.License ?? "");
@@ -69,10 +71,13 @@ const jsonld: Record<string, unknown> = {
   "@type": "Dataset",
   name: m.name,
   identifier: m.DatasetDOI ? `https://doi.org/${m.DatasetDOI}` : undefined,
-  url: dataUrl,
+  // The landing page, not the data host: this is the canonical DOI target.
+  url: landingUrl,
   version: m.latestSnapshot || undefined,
   license: licUrl ?? m.License,
   conditionsOfAccess: nonCommercial ? `Non-commercial use only (${m.License}).` : undefined,
+  // Google Dataset Search rewards this field; NEMAR data is downloadable without payment.
+  isAccessibleForFree: true,
   creator: (m.Authors ?? "")
     .split(",")
     .map((n: string) => ({ "@type": "Person", name: n.trim() }))
@@ -80,18 +85,37 @@ const jsonld: Record<string, unknown> = {
   citation: citations.length ? citations : undefined,
   measurementTechnique: modality,
   includedInDataCatalog: { "@type": "DataCatalog", name: "NEMAR", url: "https://nemar.org" },
-  isBasedOn: "https://openneuro.org",
+  // sameAs, never rel=canonical: this page carries its own DOI, validation status,
+  // and access paths, so it is not a duplicate of the upstream record.
+  sameAs: m.upstreamUrl || undefined,
   distribution: [
     {
       "@type": "DataDownload",
+      name: "BIDS tree",
       contentUrl: dataUrl,
       encodingFormat: "https://bids.neuroimaging.io",
       contentSize: m.byte_size_format || undefined,
       description:
-        `Browsable BIDS tree on S3. Download the full dataset with ` +
-        `'nemar dataset download ${id}', or fetch selectively with ` +
-        `'nemar dataset clone ${id}' then 'nemar dataset get <files>'.`,
+        `Browsable BIDS tree; large files are git-annex blobs on Amazon S3. ` +
+        `Install with 'bun add -g nemar-cli' or 'npm install -g nemar-cli'. ` +
+        `Download the full dataset with 'nemar dataset download ${id}', or fetch ` +
+        `selectively with 'nemar dataset clone ${id}' then 'nemar dataset get <path>'.`,
     },
+    // Only when a Zarr serving copy exists for this dataset.
+    ...(m.has_zarr
+      ? [
+          {
+            "@type": "DataDownload",
+            name: "Zarr serving copy",
+            contentUrl: zarrIndexUrl,
+            encodingFormat: "application/json",
+            description:
+              `Derived, latest-only Zarr copy for reading a slice without downloading ` +
+              `the dataset. index.json is the mandatory entry point: read contract_base, ` +
+              `data_base, and s3_uri from it rather than hardcoding a bucket path.`,
+          },
+        ]
+      : []),
   ],
 };
 
@@ -107,11 +131,14 @@ const summary = {
   bidsVersion: m.BIDSVersion,
   modality,
   tasks: (m.tasks ?? "").split(",").map((t: string) => t.trim()).filter(Boolean),
+  landingUrl,
   dataUrl,
+  zarr: m.has_zarr ? { index: zarrIndexUrl, verified: Boolean(m.has_zarr_verified) } : undefined,
   citations,
   download: {
     full: `nemar dataset download ${id}`,
-    selective: [`nemar dataset clone ${id}`, `nemar dataset get <files>`],
+    selective: [`nemar dataset clone ${id}`, `nemar dataset get <path>`],
+    install: ["bun add -g nemar-cli", "npm install -g nemar-cli"],
   },
 };
 

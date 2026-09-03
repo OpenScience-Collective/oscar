@@ -3,6 +3,8 @@
 Real open-science tools, made agent-ready with OSCAR.
 Each is chosen because it exercises a different mix of archetypes,
 so together they cover the whole doctrine.
+Each example's `after/` files are illustrative targets, not a description of what the
+project serves today, and they are ordered by the tiers in [`docs/evidence.md`](../docs/evidence.md).
 
 ## NEMAR (built)
 The Neuroelectromagnetic Data Archive and Tools Resource, plus `nemar-cli` and nemar.org.
@@ -16,7 +18,7 @@ Hierarchical Event Descriptors, hedtags.org.
 Archetypes: **standard**, **website** (multi-page), **library** (Python and JavaScript),
 **web app and API**, and it already ships a **Model Context Protocol (MCP) server**.
 The complete example: a project with a strong action layer that lacked the discovery layer.
-Shows how a multi-page site adopts OSCAR with one `llms.txt`, server-rendered JSON-LD, and an `AGENTS.md`.
+Shows how a multi-page site adopts OSCAR with server-rendered JSON-LD first, then an `AGENTS.md` and one `llms.txt`.
 See [`hed/`](hed/).
 
 ## EEGLAB (built)

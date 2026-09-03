@@ -1,19 +1,38 @@
 # NEMAR
 
+<!--
+  OSCAR example, illustrative target. Facts current as of 2026-09-03.
+  Tier: Optional. nemar.org does not serve this file today.
+  Ship it because it is cheap and honest, not as a findability mechanism:
+  see ../../../docs/evidence.md for why. The Core work is the server-rendered
+  schema.org Dataset (already shipped), an AI-aware robots.txt, and a sitemap.
+  Delete this comment before shipping.
+-->
+
 > The Neuroelectromagnetic Data Archive and Tools Resource: an open archive of human EEG, MEG,
-> and iEEG datasets in Brain Imaging Data Structure (BIDS) format, sourced from OpenNeuro. The
-> website is a browser application; the data is hosted at data.nemar.org and accessed with
-> nemar-cli or DataLad, not scraped from the page.
+> and iEEG datasets in Brain Imaging Data Structure (BIDS) format, many with Hierarchical Event
+> Descriptors (HED) and many sourced from OpenNeuro. Dataset pages are at nemar.org/dataset/<id>;
+> the data itself is at data.nemar.org and is fetched with nemar-cli, not scraped from the page.
 
 ## Start here
-- [Browse datasets](https://nemar.org/dataexplorer): search and filter the archive
+- [Browse datasets](https://nemar.org): search and filter the archive; a dataset page is https://nemar.org/dataset/<id>
 - [Documentation](https://docs.nemar.org): guides and the command-line reference
 - [Data host](https://data.nemar.org): the actual BIDS dataset files, at /<id>/latest/
 
+## Query the catalog without downloading
+- `GET https://api.nemar.org/datasets`: the catalog
+- `GET https://api.nemar.org/datasets/search`: search it
+- `GET https://api.nemar.org/datasets/<id>`: one dataset's metadata, including its DOI and license
+
 ## Get the data
-- [nemar-cli](https://github.com/nemarOrg/nemar-cli): `bun install -g nemar-cli`, then `nemar dataset download <id>` for the full dataset. `clone` alone does not fetch data; use `nemar dataset clone <id>` then `nemar dataset get <files>` for a selective download
+- [nemar-cli](https://github.com/nemarOrg/nemar-cli): `bun add -g nemar-cli` or `npm install -g nemar-cli`, then `nemar dataset download <id>` for the full dataset. `clone` alone does not fetch data; use `nemar dataset clone <id>` then `nemar dataset get <path>` for a selective download. `nemar dataset list`, `nemar dataset search <query>`, and `nemar dataset status <id>` (alias `view` from nemar-cli 0.9.15) answer most questions without downloading anything
 - Direct file fetch: `wget https://data.nemar.org/<id>/latest/<file>` for small subsets
 - [NSG compute](https://nemar.org/nsg_for_nemar): process datasets without downloading them
+
+## Read a slice without downloading
+- [Zarr serving copy](https://zarr.nemar.org): a derived, latest-only copy for remote reads. Start at `https://zarr.nemar.org/<id>/zarr/index.json`, the mandatory entry point, and read `contract_base`, `data_base`, and `s3_uri` from it rather than hardcoding a bucket path
+- Stream for a slice of channels, time, or subjects; download the BIDS tree when you will touch most of the array
+- `HEAD` is never redirected; a plain `GET` from a non-browser client is redirected to the public S3 object, so follow redirects. Only `index.json` is always proxied; the sibling `manifest.json` and `events.parquet` redirect like store objects
 
 ## Understand the data
 - [BIDS](https://bids.neuroimaging.io): how each dataset is structured
@@ -21,5 +40,8 @@
 - [OpenNeuro](https://openneuro.org): the upstream source of many datasets
 
 ## Notes for agents
-- A dataset page is a single-page app; the files are not in its HTML. Use the CLI, DataLad, or data.nemar.org.
+- A dataset page carries server-rendered schema.org `Dataset` JSON-LD with the DOI, the license,
+  and the distribution URLs. Read that first; the files themselves are not in the HTML.
+- DOIs are minted through EZID and DataCite as `10.82901/nemar.<id>`,
+  so the DOI resolves and negotiates to a full metadata record on its own.
 - Dataset licenses vary and are often non-commercial. Check each dataset's license before use.

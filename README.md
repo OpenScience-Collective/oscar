@@ -34,18 +34,24 @@ See [`docs/principles.md`](docs/principles.md).
 ## What agents actually see
 
 An agent never sees your rendered page, your styling, or your buttons.
-It reads the text in the payload.
-OSCAR's job is to make that text excellent and honest.
+It reads the text in the payload your server returns,
+the Hypertext Markup Language (HTML) itself.
+Most AI crawlers do not execute JavaScript at all,
+so anything your page assembles with a script does not exist for them.
+OSCAR's job is to make that returned text excellent and honest.
 
 ```
-What a human sees                 What an agent reads (/llms.txt)
------------------                 ------------------------------
-[ rendered page, CSS, buttons ]   # Your Tool
-                                  > One-line description of what it is.
-  "Try the demo"  ->  button      ## Start here
-                                  - [Docs](https://...): ...
-                                  - [Demo](https://...): try it now
+What a human sees                 What an agent reads (the served HTML)
+-----------------                 -------------------------------------
+[ rendered page, CSS, buttons ]   <script type="application/ld+json">
+                                  { "@type": "Dataset",
+  "Download"      ->  button        "identifier": "https://doi.org/...",
+                                    "license": "https://...",
+                                    "distribution": [ { "contentUrl": ... } ] }
 ```
+
+A curated `/llms.txt` on top of that is a cheap extra, not the mechanism.
+See [`docs/evidence.md`](docs/evidence.md) for which is which, and why.
 
 ## Not a fad: FAIR made practical
 
@@ -64,15 +70,28 @@ See [`docs/grounding.md`](docs/grounding.md).
 A "tool" is not one thing, so OSCAR gives a recipe per archetype.
 Most projects are a combination of two or three.
 
-| Archetype | Example | Primary techniques |
-|-----------|---------|--------------------|
-| Website / docs site | eeglab.org, nemar.org | `llms.txt`, `AGENTS.md`, AI-friendly `robots.txt`, JSON-LD, markdown mirrors |
-| Command-line tool | `nemar-cli` | machine-readable `--help`, `AGENTS.md`, examples cookbook, optional MCP server |
-| Library / toolbox | EEGLAB (MATLAB) | docstrings, typed signatures, docs `llms.txt`, MCP server, worked notebooks |
-| Web app / API | HEDit, OSA | OpenAPI spec, MCP server, JSON-LD `SoftwareApplication`, clear auth and limits |
-| Data archive | NEMAR | schema.org `Dataset`, machine-readable catalog, query + metadata + bulk download |
-| Research lab / project site | a lab or project website | JSON-LD `Organization`/`Person`/`SoftwareSourceCode`, persistent IDs (ORCID, ROR, DOI) |
-| Standard / specification | BIDS, HED | machine-readable schema, a callable validator, versioned citable spec |
+Techniques are listed in tier order, and the tier is the evidence that anything
+actually consumes the technique, not how good an idea it is.
+**Core** has a documented consumer today, **Recommended** has a narrower one,
+and **Optional** is a cheap no-regret artifact with no measured uptake.
+Every tier traces to a citation in [`docs/evidence.md`](docs/evidence.md).
+
+| Archetype | Example | Core | Recommended | Optional |
+|-----------|---------|------|-------------|----------|
+| Website / docs site | eeglab.org, nemar.org | server-rendered JSON-LD, AI-aware `robots.txt`, honest `sitemap.xml` | Signposting `Link` headers | `llms.txt`, markdown mirrors |
+| Command-line tool | `nemar-cli` | repo-root `AGENTS.md`, excellent `--help` | Model Context Protocol (MCP) server | none |
+| Library / toolbox | EEGLAB (MATLAB) | repo-root `AGENTS.md`, machine-readable license | MCP server | docs `llms.txt` |
+| Web app / API | HEDit, OSA | JSON-LD `SoftwareApplication`, repo-root `AGENTS.md` | OpenAPI spec, MCP server | `llms.txt` |
+| Data archive | NEMAR | schema.org `Dataset`, complete DataCite record, `sameAs` never `canonical`, documented bulk download | registries, Signposting, stream-versus-download guidance | `llms.txt`, Croissant export |
+| Research lab / project site | a lab or project website | JSON-LD `Organization`/`Person`/`SoftwareSourceCode`, persistent identifiers, AI-aware `robots.txt` | Signposting `Link` headers | `llms.txt` |
+| Standard / specification | Brain Imaging Data Structure (BIDS), Hierarchical Event Descriptors (HED) | versioned citable spec with a complete Digital Object Identifier (DOI) record, repo-root `AGENTS.md` | callable validator over an API or MCP | `llms.txt` |
+
+The tiers rank evidence, not value.
+For the usage-heavy archetypes, library and standard, the highest-value techniques
+(docstrings, explicit signatures, a machine-readable schema, a reference validator)
+sit in an **Unassessed** group in their guides:
+nobody measured them because they are the only interface there is.
+Read that group before you read the tiers as a to-do list.
 
 OSCAR curates instructions for the kinds of project the OpenScience Collective services:
 data archives, tools and toolsets, research lab and project sites, and standards.
@@ -87,10 +106,10 @@ Two files are site-wide and live at the origin root; everything else is per-reso
 |----------|----------|-------|
 | `robots.txt` | site root, `/robots.txt` | one per origin, never per-page |
 | `llms.txt` | site root, `/llms.txt` | one per site; links out to per-section pages |
-| `AGENTS.md` | repo root, optionally site root | one per repo; may nest per subdirectory, closest wins |
+| `AGENTS.md` | repo root (Core); a site-root copy has no uptake evidence | one per repo; may nest per subdirectory, closest wins |
 | JSON-LD / schema.org | each page's `<head>`, server-rendered | per page |
 | Markdown mirror | beside each page, `/x` to `/x.md` | per page |
-| Signposting `Link` | HTTP header or `<link>` per resource | per resource |
+| Signposting `Link` | Hypertext Transfer Protocol (HTTP) header or `<link>` per resource | per resource |
 
 You never fork `llms.txt` or `robots.txt` per page.
 Per-page detail is the JSON-LD's job:
@@ -101,7 +120,7 @@ The one root `llms.txt` gains depth by linking to those pages, not by cloning it
 
 ```
 oscar/
-  docs/            The doctrine: principles + one guide per archetype + a checklist
+  docs/            The doctrine: principles + evidence tiers + one guide per archetype + a checklist
   templates/       Copy-paste starter files (llms.txt, AGENTS.md, robots.txt, JSON-LD)
   examples/        Worked case studies (HEDit, EEGLAB, NEMAR)
   brand/           Logo and favicon
@@ -110,16 +129,19 @@ oscar/
 ## Quick start
 
 1. Read [`docs/principles.md`](docs/principles.md), the non-negotiables.
-2. Find your archetype(s) in [`docs/archetypes/`](docs/archetypes/).
-3. Copy the matching starter files from [`templates/`](templates/) and fill them in.
-4. Self-audit against [`docs/checklist.md`](docs/checklist.md).
-5. Link the files from your site footer so they are auditable.
+2. Read [`docs/evidence.md`](docs/evidence.md) to see what is worth your first afternoon.
+3. Find your archetype(s) in [`docs/archetypes/`](docs/archetypes/) and do the Core group first.
+4. Copy the matching starter files from [`templates/`](templates/) and fill them in.
+5. Self-audit against [`docs/checklist.md`](docs/checklist.md).
+6. Link the files from your site footer so they are auditable.
 
 ## Status
 
 Early and public.
 The principles and the archetype framework are stable;
 the per-archetype guides and worked examples are being written in the open.
+The technique tiers in [`docs/evidence.md`](docs/evidence.md) are a living document,
+reviewed 2026-09-03, and they are expected to move.
 See [`.context/plan.md`](.context/plan.md) for the roadmap.
 
 ## License
