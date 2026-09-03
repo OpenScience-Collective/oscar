@@ -91,7 +91,7 @@ So a fact your page assembles client-side is not badly ranked, it is absent.
    for how to cite the page (`cite-as`), its author, and its license: the FAIR Signposting Profile.
    An agent then gets citation, authorship, and license from a single HEAD request, no scraping.
    Adoption across scholarly repositories is real and verifiable
-   (Zenodo, DSpace, InvenioRDM, HAL, Pangaea, CKAN),
+   (Zenodo, DSpace 7, InvenioRDM, HAL, Pangaea, CKAN),
    and every documented consumer is repository software rather than an AI agent.
 
 ## Optional: no-regret, no evidence
